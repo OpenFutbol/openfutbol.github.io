@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Chicago Neighborhood Soccer Website # the website title (if blank, full name will be used instead)
+title: Chicago Neighborhood Soccer # the website title (if blank, full name will be used instead)
 first_name: Chicago
 middle_name: Neighborhood
 last_name: Soccer

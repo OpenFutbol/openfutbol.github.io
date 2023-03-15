@@ -1,9 +1,9 @@
 github_users:
-  - torvalds
+  - ADParedes
   - alshedivat
 
 github_repos:
-  - alshedivat/al-folio
+  - OpenFutbol/chicago-neighborhood-soccer
   - twbs/bootstrap
   - jekyll/jekyll
   - jquery/jquery
