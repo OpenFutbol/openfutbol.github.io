@@ -1,31 +1,59 @@
 ---
 layout: post
 title: Women's Pickup Soccer is here to stay!
-date: 2015-11-07 16:11:00-0400
+date: 2023-02-07 16:11:00-0400
 inline: false
 ---
 
-Announcements and news can be much longer than just quick inline posts. In fact, they can have all the features available for the standard blog posts. See below.
+</br>
 
-***
+## Hello, Women’s Wednesday! 
 
-Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.
+</br>
 
-#### Hipster list
-<ul>
-    <li>brunch</li>
-    <li>fixie</li>
-    <li>raybans</li>
-    <li>messenger bag</li>
-</ul>
 
-Hoodie Thundercats retro, tote bag 8-bit Godard craft beer gastropub. Truffaut Tumblr taxidermy, raw denim Kickstarter sartorial dreamcatcher. Quinoa chambray slow-carb salvia readymade, bicycle rights 90's yr typewriter selfies letterpress cardigan vegan.
+### **First and foremost**, 
+</br>
 
-***
+Thank you for coming out and kicking it with us. We are ecstatic about having you all join the Chicago Neighborhood Soccer community; this is for everyone!  Everyone makes a difference, and the entire community is better for having you join it.  
 
-Pug heirloom High Life vinyl swag, single-origin coffee four dollar toast taxidermy reprehenderit fap distillery master cleanse locavore. Est anim sapiente leggings Brooklyn ea. Thundercats locavore excepteur veniam eiusmod. Raw denim Truffaut Schlitz, migas sapiente Portland VHS twee Bushwick Marfa typewriter retro id keytar.
+</br>
 
-> We do not grow absolutely, chronologically. We grow sometimes in one dimension, and not in another, unevenly. We grow partially. We are relative. We are mature in one realm, childish in another.
-> —Anais Nin
+> In these past 12 months, we have grown over 1,000 new members on meetup! Almost 20% of that has been women!  Special shout out to Shelby Ponder and Nicole Hack for working with us to make this happen.
 
-Fap aliqua qui, scenester pug Echo Park polaroid irony shabby chic ex cardigan church-key Odd Future accusamus. Blog stumptown sartorial squid, gastropub duis aesthetic Truffaut vero. Pinterest tilde twee, odio mumblecore jean shorts lumbersexual.
+</br>
+
+### **Second**, 
+
+</br>
+
+we plan on doing more for women's pickup soccer!  To do that, we need to start charging enough to cover basic facility fees.  ***We were happy to put a couple grand of our own money, and take that risk, to subsidize an opportunity for women to come out and play pickup soccer for the first two months.***  Now that two months have passed, it's clear that this **Women’s Wednesday launch has been a great success!**  
+
+**We are excited to say Women’s Pick-up soccer is here to stay.** To do that, all we need to do is modestly increase the price by only $3. With $3 and the continued generosity of our community through donations, we keep looking for ways to host women’s pickup. So, don’t forget to donate; it’s all coming back to you through more events.
+
+</br>
+
+>Starting next week, February 15, 2023, it will be $8 to RSVP for Women's Wednesday.  To ensure we meet our goals, to successfully RSVP you’ll have to provide $8 
+
+</br>
+
+### **Lastly** ###  
+
+</br>
+
+Our goal is to be community-driven. *Checkout our Mission, Vision, and Values at the - [Chicago Neighborhood Soccer Wiki](https://github.com/OpenFutbol/chicago-neighborhood-soccer/wiki)* This means we want to include you, support you, and collaborate with you more.  
+
+
+#### What can you do? 
+
+1. Join the [Chicago-Neighborhood-Soccer Discord](https://discord.gg/rhfCzz3Gfj)
+
+> And Specifically join private channel "women's only" on the discord. DM the Admin- "Andre Zuzu" to add you. It's for you! You can also look there to see private links to raw pick-up soccer video we record, and photos we take. 
+
+2. Want to be an NBHD Community Leader?  Let us know by filling out this [google survey](.https://docs.google.com/forms/d/18c6h3QUnWgfAu97f5767hQNEqfUNeE8Fwv5MiS8mGdk/viewform?edit_requested=true).  Everyone is invited to be a leader.
+3. Join the women's-only channel only private channel on discord. 
+
+
+*Sincerely,*
+
+*Chicago Neighborhood Soccer Leadership Team*

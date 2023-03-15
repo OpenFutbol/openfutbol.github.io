@@ -1,7 +1,8 @@
 ---
 layout: post
-date: 2023-03-15
-inline: true
+title: Pickup Tournament!  Tournament Proceeds donated to local youth nonprofits.
+date: 2023-02-07 16:11:00-0400
+inline: false
 ---
 
-Open Call for Artists - NBHD Soccer Art Gala 2023 :sparkles: :soccer:
+NBHDSoccerPickuptourneycharity-fig3.jpeg
