@@ -1,12 +1,12 @@
 github_users:
   - ADParedes
-  - alshedivat
 
 github_repos:
   - OpenFutbol/chicago-neighborhood-soccer
+  - OpenFutbol/openfutbol.github.io
   - twbs/bootstrap
   - jekyll/jekyll
   - jquery/jquery
   - FortAwesome/Font-Awesome
   - jpswalsh/academicons
-  - mathjax/MathJax
+ # - mathjax/MathJax
