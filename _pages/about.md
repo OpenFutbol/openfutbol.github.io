@@ -1,8 +1,8 @@
 ---
 layout: about
-title: home
+title: about
 permalink: /
-subtitle: <a href='https://www.meetup.com/nbhdsoccer/'>RSVP for Community Pickup Soccer on Meetup</a> Mens. Coed. Womens. Youth. Masters. All-inclusive.
+subtitle: <a href='https://www.meetup.com/nbhdsoccer/'>RSVP</a> Mens. Coed. Womens. Youth. Masters. All-inclusive.
 
 profile:
   align: right
