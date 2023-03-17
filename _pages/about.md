@@ -23,9 +23,7 @@ social: true  # includes social icons at the bottom of the page
 
 Chicago Neighborhood Soccer offers pickup soccer games in Chicago neighborhoods every week, connecting locals and inspiring a love of the game. Join us for fun and friendly soccer games, no matter your skill level!
 
-There's more to pick-up soccer than meets the eye. Even unstructured play requires organization. 
 
-**Chicago Neighborhood Soccer** (NBHD Soccer) is a homegrown, grassroots, nonprofit organization founded and driven by local pick-up soccer players. We celebrate Chicago's pick-up soccer players, and we give back to our local communities.
 
 
 ⭐️ More Resources
