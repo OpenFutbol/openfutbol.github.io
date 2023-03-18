@@ -18,12 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-[<img src="https://img.shields.io/badge/RSVP%20to%20Play-MEETUP-blue" width=170px>](https://www.meetup.com/nbhdsoccer) 
-
-
 Chicago Neighborhood Soccer offers pickup soccer games in Chicago neighborhoods every week, connecting locals and inspiring a love of the game. Join us for fun and friendly soccer games, no matter your skill level!
-
-
 
 
 ⭐️ More Resources

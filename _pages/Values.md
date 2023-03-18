@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /values/
-title: Mission Vision Values
+title: Values
 description: About us
 nav: true
 nav_order: 5
