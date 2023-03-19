@@ -4,7 +4,7 @@ permalink: /values/
 title: About us
 description: Mission, Vision, Values
 nav: true
-nav_order: 5
+nav_order: 1
 ---
 
 **Chicago Neighborhood Soccer** (NBHD Soccer) is a homegrown, grassroots, nonprofit organization founded and driven by local pick-up soccer players. We celebrate Chicago's pick-up soccer players, and we give back to our local communities.

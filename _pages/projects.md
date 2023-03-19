@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of open community projects.  Open community means anyone can contribute as a volunteer or leader. As us for how to get involved.
 nav: true
 nav_order: 2
-display_categories: [work, fun]
+display_categories: [pickup-soccer, incubator, open-source]
 horizontal: false
 ---
 

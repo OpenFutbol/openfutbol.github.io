@@ -6,6 +6,11 @@ img:
 importance: 3
 category: incubator
 ---
+
+We will help to grow community pickup soccer groups by creating an github repo in the OpenFutbol Github Organization.
+Each Accepted Community Pickup Soccer group will get a website stood up for them for free.  
+Join the discord and let us know you are interested.  
+
 ## GitHub users
 
 {% if site.data.repositories.github_users %}

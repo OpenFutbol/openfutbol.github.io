@@ -1,12 +1,32 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
+title: Open-Source Software Project 1
+description: Chicago Pickup Soccer Aggregator Web App
 img:
 importance: 4
-category: fun
+category: open-source
 ---
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/nbhddiscord.jpg" title="NBHD Soccer Discord" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Discord will be used go grow community, including open-source software (OSS) contributors
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/nbhdaggregator.jpg" title="Webapp: Pickup Soccer Aggregator" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    This will be a free webapp that will help the community find pickup soccer in the chicago neighborhoods
+</div>
+
+
+<!-->
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
 Make your photos 1/3, 2/3, or full width.
