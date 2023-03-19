@@ -3,7 +3,7 @@ layout: post
 title: We are on twitter!
 date: 2020-09-28 11:12:00-0400
 description: We created a twitter and a first tweet to reach a wider audience of the open source community 
-tags: formatting
+tags: open-source code
 categories: twitter open-source
 ---
 

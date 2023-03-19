@@ -4,6 +4,7 @@ title: Benfits of creating more pickup Soccer groups
 date: 2022-10-10 17:39:00
 description: More community pickup Soccer Groups can benefit our neighborhoods!
 category: organizing
+tags: organizers
 
 ---
 

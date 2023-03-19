@@ -4,6 +4,7 @@ title: Community Pickup Soccer Frameworks
 date: 2023-02-27 11:59:00-0400
 description: 
 categories: organizing
+tags: organizers
 giscus_comments: true
 related_posts: false
 ---

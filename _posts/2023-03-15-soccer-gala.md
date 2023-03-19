@@ -4,6 +4,7 @@ title: Open Call for Artists
 date: 2023-03-15 17:39:00
 description: NBHD Soccer Art Gala 2023 to support the  art community
 category: community-events
+tags: artists
 redirect: /assets/pdf/example_pdf.pdf
 ---
 

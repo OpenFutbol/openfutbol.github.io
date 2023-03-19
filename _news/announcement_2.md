@@ -3,6 +3,7 @@ layout: post
 title: Women's Pickup Soccer is here to stay!
 date: 2023-02-07 16:11:00-0400
 inline: false
+tags: women
 ---
 
 
