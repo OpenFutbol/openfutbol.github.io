@@ -1,26 +1,19 @@
 ---
 layout: page
-title: project 3
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
-importance: 3
-category: work
+title: Community Pickup Soccer
+description: A initative organizes pickup soccer frameworks
+img: assets/img/CommunityLedPickupSoccer.jpg
+importance: 1
+category: pickup-soccer
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
+    Hosting Community Pickup Soccer 
     ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
+    Community pickup soccer has numerous benefits for local neighborhoods. It brings together people of all ages, genders, and skill levels around a shared love of the game, helping to build a sense of community and promote inclusion in the area. It also encourages physical activity, improving the health and well-being of participants. Pickup soccer games can also help develop teamwork, communication, and social skills, and promote mental health through stress relief and social interaction. By organizing and growing community pickup soccer groups, local neighborhoods can foster stronger relationships between residents and promote a healthy, active lifestyle. 
     ---
+    
 
+<!-->
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}

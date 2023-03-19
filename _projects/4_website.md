@@ -1,18 +1,40 @@
 ---
 layout: page
-title: Community Pickup Soccer
-description: A initative organizes pickup soccer frameworks
-img: assets/img/12.jpg
-importance: 1
-category: work
+title: Open-source Pickup Soccer Group websites
+description: Create website for community pickup soccer groups
+img:
+importance: 3
+category: incubator
+---
+## GitHub users
+
+{% if site.data.repositories.github_users %}
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% for user in site.data.repositories.github_users %}
+    {% include repository/repo_user.html username=user %}
+  {% endfor %}
+</div>
+{% endif %}
+
 ---
 
-    Hosting Community Pickup Soccer 
-    ---
-    Community pickup soccer has numerous benefits for local neighborhoods. It brings together people of all ages, genders, and skill levels around a shared love of the game, helping to build a sense of community and promote inclusion in the area. It also encourages physical activity, improving the health and well-being of participants. Pickup soccer games can also help develop teamwork, communication, and social skills, and promote mental health through stress relief and social interaction. By organizing and growing community pickup soccer groups, local neighborhoods can foster stronger relationships between residents and promote a healthy, active lifestyle. 
-    ---
-    
+## GitHub Repositories
 
+{% if site.data.repositories.github_repos %}
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% for repo in site.data.repositories.github_repos %}
+    {% include repository/repo.html repository=repo %}
+  {% endfor %}
+</div>
+{% endif %}
+
+
+<!-->
+Every project has a beautiful feature showcase page.
+It's easy to include images in a flexible 3-column grid format.
+Make your photos 1/3, 2/3, or full width.
+
+To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 
     ---
     layout: page

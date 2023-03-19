@@ -11,7 +11,9 @@ categories: twitter open-source
 An example of displaying a tweet:
 {% twitter https://twitter.com/NbhdSoccer/status/1635430972987518977 %}
 
-<! -- # Timeline An example of pulling from a timeline:  {% twitter https://twitter.com/jekyllrb maxwidth=500 limit=3 %} -->
+<!--
+# Timeline An example of pulling from a timeline:  {% twitter https://twitter.com/jekyllrb maxwidth=500 limit=3 %} 
+-->
 
 
 # Why Twitter for Open Source ?
