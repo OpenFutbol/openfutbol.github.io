@@ -2,7 +2,7 @@
 layout: about
 title: home
 permalink: /
-subtitle: <a href='https://www.meetup.com/nbhdsoccer/'> RSVP for chicago pickup soccer. </a> Mens. Coed. Womens. Youth. Masters.
+subtitle: <a href='https://www.meetup.com/nbhdsoccer/'> RSVP for chicago pickup soccer. </a> Mens. Coed. Womens. Youth. Veterans.
 
 profile:
   align: right
@@ -19,7 +19,9 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-There's more to pick-up soccer than meets the eye. Even unstructured play requires organization. Our mission is to provide an accessible and inclusive pickup soccer community, driven by a common love of the game. Together, we provide the best pick-up soccer in the neighborhoods by organizing communities and uniting players from different walks of life.
+There's more to pick-up soccer than meets the eye. Even unstructured play requires organization. 
+
+Our mission is to provide an accessible and inclusive pickup soccer community, driven by a common love of the game. Together, we provide the best pick-up soccer in the neighborhoods by organizing communities and uniting players from different walks of life.
 
 Chicago Neighborhood Soccer offers pickup soccer games in the Chicago every week, connecting locals and inspiring a love of the game. Join us for fun and friendly soccer games no matter your skill level!
 
