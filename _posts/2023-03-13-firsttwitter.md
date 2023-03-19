@@ -8,7 +8,7 @@ categories: twitter open-source
 ---
 
 # First Tweet
-An example of displaying a tweet:
+
 {% twitter https://twitter.com/NbhdSoccer/status/1635430972987518977 %}
 
 <!--
