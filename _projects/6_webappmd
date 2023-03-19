@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Open-Source Software Project 1
+title: Pickup soccer aggregator
 description: Chicago Pickup Soccer Aggregator Web App
-img:
+img: assets/img/webapp.jpg
 importance: 4
 category: open-source
 ---

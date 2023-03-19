@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Open-source Pickup Soccer Group websites
+title: Create websites for groups
 description: Create website for community pickup soccer groups
 img:
 importance: 3
