@@ -2,7 +2,7 @@
 layout: about
 title: home
 permalink: /
-subtitle: <a href='https://www.meetup.com/nbhdsoccer/'>All-inclusive Soccer Events -RSVP- </a> Mens. Coed. Womens. Youth. Masters.
+subtitle: <a href='https://www.meetup.com/nbhdsoccer/'> RSVP for chicago pickup soccer. </a> Mens. Coed. Womens. Youth. Masters.
 
 profile:
   align: right

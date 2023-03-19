@@ -116,9 +116,9 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Chicago Neighborhood Soccer Blog # blog_name will be displayed in your blog page
+blog_name: Chicago Pickup Soccer Blog # blog_name will be displayed in your blog page
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: Local Communty Pickup Soccer Blog and Annoucements
+blog_description: Chicago Neighborhood Soccer Blogs and Annoucements
 permalink: /blog/:year/:title/
 
 # Pagination
