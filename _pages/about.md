@@ -25,6 +25,6 @@ Our mission is to provide an accessible and inclusive pickup soccer community, d
 
 Chicago Neighborhood Soccer offers pickup soccer games in the Chicago every week, connecting locals and inspiring a love of the game. Join us for fun and friendly soccer games no matter your skill level!
 
-Checkout our projects in open source software, open science, community building, and incubating pickup soccer!
+We are a pickup soccer incubuator growing projects in open source software, open science, and giving back to our communities!
 
 
