@@ -24,6 +24,7 @@ We believe pickup soccer should belong to the community of amazing Chicago playe
 
 
 **We value inclusion**
+
     * Pick-up soccer is a game for everyone, regardless of skill or background. Everyone belongs and can play.
     * Inclusive games create a welcoming and friendly environment where everyone is encouraged to participate and contribute
 
