@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /values/
-title: Values
+title: values
 description: About us
 nav: true
 nav_order: 5

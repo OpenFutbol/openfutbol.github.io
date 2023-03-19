@@ -12,7 +12,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Chicago Neighborhood soccer is maintained by pick-up players in the local Chicago neighborhood. Join the discord to talk to the community and ask to get involved as a player, contributor, maintainer, or even admin
+  Chicago Neighborhood soccer is maintained by pick-up players in the local Chicago neighborhood. Join the community on discord!
 keywords: jekyll, jekyll-theme, pickup-soccer, meetup, community-soccer, soccer-website, open-source-website, open-source, nonprofit, nonprofit-website  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
