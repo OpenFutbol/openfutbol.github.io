@@ -1,13 +1,17 @@
 ---
 layout: page
 permalink: /values/
-title: About us
-description: Mission, Vision, Values
+title: about us
+description: Chicago Neighborhood Soccer Mission, Vision, and Values
 nav: true
 nav_order: 1
 ---
+<h2 align ="center"> ⭐️ About Chicago Neighorhood Soccer </h2> 
+We are so excited to share with community pickup soccer events in Chicago, IL - Chicago Neighborhood Soccer! **Chicago Neighborhood Soccer** or NBHD Soccer is a homegrown, grassroots, nonprofit organization founded and driven by local pick-up soccer players. We celebrate Chicago's pick-up soccer players, and we give back to our local communities. 
 
-**Chicago Neighborhood Soccer** (NBHD Soccer) is a homegrown, grassroots, nonprofit organization founded and driven by local pick-up soccer players. We celebrate Chicago's pick-up soccer players, and we give back to our local communities.
+We organize pick up soccer games at local parks and fields throughout the city, and our goal is to bring the community together through sport and recreation. Our games are open to everyone and are a great way to meet new people and stay active. 
+
+We want to make sure that everyone can participate, so we offer free memberships, and no pressure to join a team. If you're new to the game, we've got you covered with a comprehensive selection of training videos, articles, and tips to help you improve your game. We also offer a range of soccer gear and equipment for rent, so you can be sure you have everything you need to get out there and play. So come join us and make some new friends!
 
 <h2 align ="center"> ⭐️ Mission </h2>
 Our mission is to provide an accessible and inclusive community driven by a common love of the game. Together, we provide the best pick-up soccer in the neighborhood by organizing communities and uniting players from different walks of life. 
@@ -44,15 +48,3 @@ Everyone can be part of the pick-up community and be a contributor.
 - Join the community on [<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">](https://discord.com/invite/rhfCzz3Gfj)
 - Play pickup soccer with the community on meetup [<img src="https://img.shields.io/badge/RSVP%20to%20Play-MEETUP-blue">](https://www.meetup.com/nbhdsoccer) 
 - Learn GitHub, follow our roadmap, and submit a pull request. Every contribution is meaningful, that includes fixing typos.  We want to grant leadership opportunities to the community to help on discord, GitHub, and in the pick-up soccer scene. 
-
-<h2 align ="center"> ⭐️ More Resources </h2>
-
-- [Community Code of Conduct](https://github.com/OpenFutbol/chicago-neighborhood-soccer/blob/main/CODE_OF_CONDUCT.md)
-- *Work in progress* - FAQs
-- *Work in progress* - Chicago Neighborhood Soccer - Github Pages
-- *Work in progress* - Chicago Pick-up Soccer Aggregator 
-- *Work in progress* - Chicago Pick-up Soccer Fund
-- *Work in progress* - Community Calls
-- *Work in progress* - The Discourse Community Platform Guide
-- *Work in progress* - Roadmap  
-- *Work in progress* - Sponsors
