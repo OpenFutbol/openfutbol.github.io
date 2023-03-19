@@ -22,21 +22,22 @@
         - Local soccer players assembling at parks and fields to play soccer 
         - title: Community Pickup Soccer
           contents:
-            - Turf Pickup 6,7,8, or 9 per team, Small Goals, 2-8 Teams
-            - Tournament 8 v 8, Large Goals, 4 - 8 Teams
-            - Futsal Pickup 5 v 5, Small Sided Goals, 2 - 4 Teams
+            - Run Turf Pickup 6,7,8, or 9 per team, Small Goals, 2-8 Teams
+            - Run Tournaments 8 v 8, Large Goals, 4 - 8 Teams
+            - Run Futsal Pickup 5 v 5, Small Sided Goals, 2 - 4 Teams
     - title: Adult Recreational Men's Soccer League
       institution: 606 Soccer
       year: 2016 - 2018
       description:
-        - League of 4 - 8 Teams,  8 v 8, Large Goals
+        - Run Soccer Leagues of 4 - 8 Teams,  8 v 8, Large Goals
     - title: Community Pickup Soccer Organization
       institution: <a href="https://opencollective.com/chicago-neighborhood-soccer"> Chicago Neighborhood Soccer </a>
       year: 2020 - now
+      description:
         - Incorporated Nonprofit ran by local pickup soccer players 
-        - Provide community pickup soccer events
-        - Partnerships with professional and 501(c)3 charitable organizations
-        - Fundraisers and Charity Events
+        - Create and run community pickup soccer events
+        - Partner with professional and 501(c)3 charitable organizations
+        - Create and run community fundraisers and fharitable Events
         - Incubate community pickup soccer groups 
         - Drive Open Science Soccer Research Projects
         - Drive Open Source Software Projects for Pickup Soccer
@@ -60,17 +61,6 @@
 - title: Open Soccer Research
   type: nested_list
   contents:
-    - title: Pickup Soccer Organizations
+    - title: work in progress
       items: 
-        - To be determined
-    - title: Pickup Soccer Players
-      items:
-        - To be determined
-    - title: Community Pickup Soccer 
-      items: 
-        - To be determined
-
-- title: Other Interests
-  type: list
-  contents:
-    - To be determined
+        - work in progress
