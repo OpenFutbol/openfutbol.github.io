@@ -2,7 +2,7 @@
 layout: about
 title: home
 permalink: /
-subtitle: <a href='https://www.meetup.com/nbhdsoccer/'> RSVP for chicago pickup soccer. </a> Mens. Coed. Womens. Youth. Veterans.
+subtitle: <a href='https://www.meetup.com/nbhdsoccer/'> RSVP to play pickup soccer in Chicago. </a> Mens. Coed. Womens. Youth. Veterans.
 
 profile:
   align: right
@@ -25,6 +25,6 @@ Our mission is to provide an accessible and inclusive pickup soccer community, d
 
 Chicago Neighborhood Soccer offers pickup soccer games in the Chicago every week, connecting locals and inspiring a love of the game. Join us for fun and friendly soccer games no matter your skill level!
 
-Checkout our projects tabs for exciting initatives rooted in community-building and giving back!
+Checkout our projects in open source software, open science, community building, and incubating pickup soccer!
 
 
