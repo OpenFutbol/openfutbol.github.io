@@ -12,38 +12,61 @@
     - name: Languages
       value: English, Spanish
 
-- title: Experience
+- title: History
   type: time_table
   contents:
-    - title: Community Pickup Soccer Group
+    - title: Community Pickup Soccer Club
       year: 2013 - 2019 
-      institution: Chicago International Soccer Club
+      institution: Chicago International Soccer Club (CISC)
       description:
-        - Local soccer players assembling at parks and fields to play soccer 
-        - title: Community Pickup Soccer
+        - title: Local soccer players assembling at parks and fields to play soccer 
           contents:
             - Run Turf Pickup 6,7,8, or 9 per team, Small Goals, 2-8 Teams
             - Run Tournaments 8 v 8, Large Goals, 4 - 8 Teams
             - Run Futsal Pickup 5 v 5, Small Sided Goals, 2 - 4 Teams
+    - title: David Benavidez Annual Soccer Tournament
+      year: 2019 - now
+      institution: 
+      description: 
+        - An annual competitive & inclusive community soccer tournament
+        - co-hosted with the Benavidez Family in memory of David Benavidez
+        - Proceed are donated nonprofit cancer research institutions
     - title: Adult Recreational Men's Soccer League
       institution: 606 Soccer
-      year: 2016 - 2018
+      year: 2016 - 2020
       description:
-        - Run Soccer Leagues of 4 - 8 Teams,  8 v 8, Large Goals
-    - title: Community Pickup Soccer Organization
+        - Run Soccer Leagues of 4 - 8 Teams, 8 v 8, Large Goals
+    - title: Community Pickup Soccer Collaboration
+      institution: CISC + 606 
+      year: 2020 - 2022
+      description:
+        - Create and run community pickup soccer events, focused in west and south Chicago Neighborhoods
+    - title: Incorporated nonprofit organization
       institution: <a href="https://opencollective.com/chicago-neighborhood-soccer"> Chicago Neighborhood Soccer </a>
-      year: 2020 - now
+      year: 2022 - now
       description:
-        - Incorporated Nonprofit ran by local pickup soccer players 
-        - Create and run community pickup soccer events
+        - Incorporated Nonprofit in Chicago, Illinois, run by local pickup soccer players
+        - Create and run community pickup soccer events, focused in west and south Chicago neighborhoods
         - Partner with professional and 501(c)3 charitable organizations
         - Create and run community-focused fundraisers and charitable Events
-        - Incubate community pickup soccer groups 
-        - Drive Open Science Soccer Research Projects
-        - Drive Open Source Software Projects for Pickup Soccer
+        - Incubate Chicago community pickup soccer groups and leaders
+    - title: <a href="https://openfutbol.github.io/projects/3_womenfocused/"> Womens Community Pickup Soccer Initiative </a>
+      instituion: Chicago Neighborhood Soccer
+      year: 2022 - now
+      description:
+        - Launched the First All Women Only Pickup Soccer in Chicago Neighborhood
+        - Co-host with Nicole Hack (Chicago Womens Soccer) and Shelby Ponder
+    - title: Open Source Commmunity
+      instituion: Chicago Neighborhood Soccer with OpenFutbol
+      year: 2023 - now
+      description: 
+        - Joined the OpenFutbol Project to grow Open Source based Projects
+        - Launched Open Source Soccer Science (Community Pickup Soccer Research)
+        - Launched Open Source Soccer Software (Community Pickup Soccer Software)
+
 
       
-- title: Open Source Projects
+- title: Open Source Software Projects for Community Pickup Soccer
   type: time_table
   contents:
     - title: <a href="https://github.com/OpenFutbol">OpenFutbol</a>
@@ -58,9 +81,12 @@
 
   
 
-- title: Open Pickup Soccer Research
+- title: Community Pickup Soccer Research
   type: nested_list
   contents:
-    - title: work in progress
+    - title: Pickup Soccer Ontology
+      year: 2023-now
       items: 
-        - work in progress
+        - Community Pickup Soccer vs Transactional Pickup Soccer
+        - Organized Pickup Soccer vs Unstructured Play 
+        - 5 Level Framework for Organized Pickup Soccer
