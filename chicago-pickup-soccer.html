@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Pickup Soccer | Coed & Women's Games | Find Players Near You</title>
+    <meta name="description" content="Join Chicago's best pickup soccer community. Find coed, women's, and competitive games across all neighborhoods. Indoor & outdoor options. All skill levels welcome.">
+    <meta name="keywords" content="Chicago pickup soccer, coed soccer Chicago, women's soccer Chicago, pickup games Chicago, soccer players Chicago, neighborhood soccer, indoor soccer Chicago, outdoor soccer Chicago, Chicago soccer community, pick up soccer, futbol Chicago">
+    
+    <!-- SEO Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsOrganization",
+      "name": "NBHD Soccer Chicago",
+      "description": "Chicago's premier pickup soccer community organizing coed, women's, and competitive games across all neighborhoods",
+      "url": "https://openfutbol.github.io/chicago-pickup-soccer.html",
+      "sameAs": [
+        "https://www.meetup.com/nbhdsoccer/",
+        "https://nbhdsoccer.github.io"
+      ],
+      "sport": "Soccer",
+      "areaServed": {
+        "@type": "City",
+        "name": "Chicago",
+        "addressRegion": "IL",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.8781",
+        "longitude": "-87.6298"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Coed Pickup Soccer Games",
+          "description": "Mixed gender pickup soccer games for all skill levels",
+          "price": "10",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer", 
+          "name": "Women's Only Soccer Games",
+          "description": "Women-only pickup soccer games in a supportive environment",
+          "price": "10",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        :root {
+            --primary-blue: #0EA5E9;
+            --primary-red: #DC2626;
+            --deep-blue: #0C4A6E;
+            --soft-blue: #E0F2FE;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --background: #FAFBFC;
+            --surface: #FFFFFF;
+            --border: #E5E7EB;
+            --success-green: #059669;
+            --warm-orange: #EA580C;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--deep-blue));
+            --gradient-accent: linear-gradient(135deg, var(--primary-red), var(--warm-orange));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+        }
+
+        .header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .neighborhood-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .neighborhood-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .neighborhood-info {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .testimonials {
+            background: var(--soft-blue);
+            padding: 4rem 0;
+        }
+
+        .testimonial {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .faq-item {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+        }
+
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚽</div>
+                <span>Chicago Pickup Soccer</span>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Join Chicago's Best Pickup Soccer Community</h1>
+            <p>Find coed, women's, and competitive games across all Chicago neighborhoods. Indoor and outdoor options for every skill level.</p>
+            <div class="cta-buttons">
+                <a href="https://www.meetup.com/nbhdsoccer/events/" class="btn btn-primary">Find Games Today</a>
+                <a href="/" class="btn btn-secondary">Interactive Map</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose NBHD Soccer?</h2>
+            <p class="section-subtitle">Chicago's premier pickup soccer community with games happening every week across the city</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title">Coed Games</h3>
+                    <p>Mixed-gender pickup games every Tuesday and Friday. All skill levels welcome in our inclusive community.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👩‍⚽</div>
+                    <h3 class="feature-title">Women's Only</h3>
+                    <p>Dedicated women's games every Wednesday providing a supportive environment for female players to develop their skills.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏟️</div>
+                    <h3 class="feature-title">Multiple Venues</h3>
+                    <p>Indoor games at YMCA Rauner and outdoor games at parks across Pilsen, Bridgeport, Logan Square, and more neighborhoods.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Affordable</h3>
+                    <p>Just $5-10 per game. No expensive league fees or long-term commitments. Pay as you play.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3 class="feature-title">All Skill Levels</h3>
+                    <p>From beginners to competitive players. We focus on fun, fitness, and building community through soccer.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Easy to Join</h3>
+                    <p>Find games on Meetup, join our Discord, or just show up. No complicated registration process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--surface);">
+        <div class="container">
+            <h2 class="section-title">Neighborhoods We Play In</h2>
+            <p class="section-subtitle">Pickup soccer happening across Chicago's diverse neighborhoods</p>
+            
+            <div class="neighborhoods-grid">
+                <div class="neighborhood-card">
+                    <div class="neighborhood-name">Pilsen</div>
+                    <div class="neighborhood-info">YMCA Rauner • Tuesday & Wednesday • Indoor courts</div>
+                </div>
+                
+                <div class="neighborhood-card">
+                    <div class="neighborhood-name">Bridgeport</div>
+                    <div class="neighborhood-info">Local parks • Weekend games • Outdoor fields</div>
+                </div>
+                
+                <div class="neighborhood-card">
+                    <div class="neighborhood-name">Logan Square</div>
+                    <div class="neighborhood-info">Community spaces • Regular meetups • All levels</div>
+                </div>
+                
+                <div class="neighborhood-card">
+                    <div class="neighborhood-name">Little Village</div>
+                    <div class="neighborhood-info">Neighborhood parks • Growing community • Welcoming</div>
+                </div>
+                
+                <div class="neighborhood-card">
+                    <div class="neighborhood-name">McKinley Park</div>
+                    <div class="neighborhood-info">Friday games • Beginner friendly • $5 entry</div>
+                </div>
+                
+                <div class="neighborhood-card">
+                    <div class="neighborhood-name">Humboldt Park</div>
+                    <div class="neighborhood-info">Park district fields • Seasonal games • Community focused</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial">
+                <div class="testimonial-text">"NBHD Soccer helped me find an amazing community when I moved to Chicago. The women's games are especially welcoming and have helped me improve so much!"</div>
+                <div class="testimonial-author">- Sarah M., Logan Square</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do I need to be good at soccer to join?</div>
+                <div class="faq-answer">Not at all! We welcome players of all skill levels, from complete beginners to competitive players. Our focus is on fun, fitness, and community building.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How much does it cost?</div>
+                <div class="faq-answer">Most games are $5-10 per person to cover field/gym rental costs. Much more affordable than joining a league with no long-term commitments.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What should I bring?</div>
+                <div class="faq-answer">Just bring yourself, water, and appropriate footwear (turf shoes for indoor, cleats for outdoor). We provide the balls and set up the games.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I find games?</div>
+                <div class="faq-answer">Join our Meetup group for regular updates, check our interactive map, or follow us on social media. Games are posted regularly with locations and times.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Are the games safe?</div>
+                <div class="faq-answer">Safety is our priority. We emphasize fair play, provide basic first aid, and maintain a respectful community environment. Most games are recreational pace.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.meetup.com/nbhdsoccer/">Meetup</a>
+                <a href="/">Interactive Map</a>
+                <a href="mailto:nbhdsoccer@gmail.com">Contact</a>
+                <a href="https://nbhdsoccer.github.io">NBHD Soccer</a>
+            </div>
+            <p>&copy; 2025 NBHD Soccer Chicago. Building community through pickup soccer.</p>
+        </div>
+    </footer>
+</body>
+</html>

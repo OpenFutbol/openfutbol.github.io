@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Pickup Soccer Finder | OpenFutbol by NBHD Soccer</title>
+    <meta name="description" content="Find pickup soccer games across Chicago neighborhoods. Coed, women's, and competitive games. Interactive map powered by NBHD Soccer community organizing.">
+    <meta name="keywords" content="Chicago pickup soccer, coed soccer Chicago, women's soccer Chicago, pickup games, neighborhood soccer, soccer finder, Chicago soccer community, NBHD Soccer">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="assets/img/prof_pic.jpg">
+    
+    <!-- SEO Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Chicago Pickup Soccer Finder",
+      "description": "Interactive pickup soccer finder for Chicago neighborhoods. Find coed, women's, and competitive pickup games across the city.",
+      "url": "https://openfutbol.github.io/",
+      "applicationCategory": "Sports & Recreation",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NBHD Soccer",
+        "description": "Chicago neighborhood soccer community organization"
+      },
+      "keywords": ["Chicago pickup soccer", "coed soccer", "women's soccer", "neighborhood soccer", "pickup games"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.8781",
+        "longitude": "-87.6298"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Chicago",
+        "addressRegion": "IL",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* Professional nonprofit color palette inspired by Chicago flag */
+            --primary-blue: #0EA5E9;      /* Sky blue - professional, trustworthy */
+            --primary-red: #DC2626;       /* Clear red - energy, passion */
+            --deep-blue: #0C4A6E;         /* Deep blue - stability, trust */
+            --soft-blue: #E0F2FE;         /* Light blue - calm backgrounds */
+            --warm-red: #FEE2E2;          /* Light red - gentle accents */
+            
+            /* Neutrals for professional look */
+            --text-primary: #1F2937;      /* Dark gray for main text */
+            --text-secondary: #6B7280;    /* Medium gray for secondary text */
+            --text-light: #9CA3AF;        /* Light gray for subtle text */
+            --background: #FAFBFC;        /* Very light gray background */
+            --surface: #FFFFFF;           /* Pure white for cards */
+            --border: #E5E7EB;            /* Light gray borders */
+            
+            /* Success and accent colors */
+            --success-green: #059669;     /* For positive actions */
+            --warm-orange: #EA580C;       /* For highlights and CTAs */
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--deep-blue));
+            --gradient-accent: linear-gradient(135deg, var(--primary-red), var(--warm-orange));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+            min-height: 100vh;
+        }
+
+        .app-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+
+        .app-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .app-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo-svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .brand-main {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .brand-sub {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .powered-by {
+            background: rgba(255,255,255,0.15);
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-left: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .powered-by:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-1px);
+        }
+
+        .app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 2.5rem;
+            min-height: calc(100vh - 120px);
+        }
+
+        .map-section {
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .map-header {
+            margin-bottom: 2rem;
+        }
+
+        .map-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .map-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .chicago-map {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            background: var(--soft-blue);
+            border-radius: 12px;
+            border: 2px solid var(--primary-blue);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chicago-map::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 550' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='water' patternUnits='userSpaceOnUse' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23DBEAFE'/%3E%3Cpath d='M0 7.5L7.5 0L15 7.5L7.5 15Z' fill='%23BFDBFE' opacity='0.4'/%3E%3C/pattern%3E%3C/defs%3E%3C!-- Lake Michigan (right side, more accurate shape) --%3E%3Cpath d='M320 0 L400 0 L400 550 L320 550 L315 520 L318 480 L322 440 L325 400 L320 360 L315 320 L318 280 L322 240 L325 200 L320 160 L315 120 L318 80 L322 40 Z' fill='url(%23water)' stroke='%230EA5E9' stroke-width='2'/%3E%3C!-- Chicago River (more accurate path) --%3E%3Cpath d='M160 420 Q180 400 200 385 Q220 370 240 350 Q280 330 315 310' fill='none' stroke='%230EA5E9' stroke-width='3'/%3E%3Cpath d='M160 420 Q140 440 130 460 Q120 480 115 500' fill='none' stroke='%230EA5E9' stroke-width='2'/%3E%3C!-- Major Streets Grid (Chicago's grid system) --%3E%3Cg stroke='%239CA3AF' stroke-width='1' opacity='0.4'%3E%3C!-- Key North-South Streets --%3E%3Cline x1='40' y1='0' x2='40' y2='550'/%3E%3Cline x1='80' y1='0' x2='80' y2='550'/%3E%3Cline x1='120' y1='0' x2='120' y2='550'/%3E%3Cline x1='160' y1='0' x2='160' y2='550'/%3E%3Cline x1='200' y1='0' x2='200' y2='550'/%3E%3Cline x1='240' y1='0' x2='240' y2='550'/%3E%3Cline x1='280' y1='0' x2='280' y2='550'/%3E%3C!-- Key East-West Streets --%3E%3Cline x1='0' y1='80' x2='320' y2='80'/%3E%3Cline x1='0' y1='140' x2='320' y2='140'/%3E%3Cline x1='0' y1='200' x2='320' y2='200'/%3E%3Cline x1='0' y1='260' x2='320' y2='260'/%3E%3Cline x1='0' y1='320' x2='320' y2='320'/%3E%3Cline x1='0' y1='380' x2='320' y2='380'/%3E%3Cline x1='0' y1='440' x2='320' y2='440'/%3E%3Cline x1='0' y1='500' x2='320' y2='500'/%3E%3C/g%3E%3C!-- Major Parks (green areas) --%3E%3Cellipse cx='120' cy='100' rx='30' ry='20' fill='%2316A34A' opacity='0.5' /%3E%3Cellipse cx='180' cy='170' rx='25' ry='15' fill='%2316A34A' opacity='0.5' /%3E%3Cellipse cx='80' cy='250' rx='20' ry='30' fill='%2316A34A' opacity='0.5' /%3E%3Cellipse cx='140' cy='320' rx='35' ry='25' fill='%2316A34A' opacity='0.5' /%3E%3C!-- Downtown/Loop area --%3E%3Crect x='200' y='320' width='50' height='70' fill='%23F1F5F9' opacity='0.7' rx='5'/%3E%3C!-- Major highways/interstates --%3E%3Cg stroke='%236B7280' stroke-width='2' opacity='0.6'%3E%3Cpath d='M0 120 Q100 110 200 120 Q250 125 320 130' fill='none'/%3E%3Cpath d='M0 380 Q80 375 160 380 Q240 385 320 390' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .neighborhood {
+            position: absolute;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 10;
+            backdrop-filter: blur(1px);
+        }
+
+        .neighborhood:hover {
+            transform: scale(1.05) translateY(-2px);
+            z-index: 15;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        .neighborhood.frequent {
+            background: var(--gradient-accent);
+        }
+
+        .neighborhood.sometimes {
+            background: var(--gradient-primary);
+        }
+
+        .neighborhood.rarely {
+            background: linear-gradient(135deg, var(--text-secondary), var(--text-light));
+        }
+
+        .player-avatar {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: url('assets/img/prof_pic.jpg');
+            background-size: cover;
+            background-position: center;
+            animation: moveAround 15s infinite linear;
+            z-index: 30;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        @keyframes moveAround {
+            0% { transform: translate(50px, 100px); }
+            20% { transform: translate(200px, 150px); }
+            40% { transform: translate(350px, 200px); }
+            60% { transform: translate(300px, 350px); }
+            80% { transform: translate(100px, 400px); }
+            100% { transform: translate(50px, 100px); }
+        }
+
+        .map-legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            background: var(--surface);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+
+        .legend-color {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .sidebar {
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+            height: fit-content;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .filters-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .filter-select, .filter-input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: var(--surface);
+            color: var(--text-primary);
+        }
+
+        .filter-select:focus, .filter-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .games-list h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .game-card {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left-color: var(--primary-red);
+        }
+
+        .game-title {
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .game-details {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .game-neighborhood {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.2);
+        }
+
+        .cta-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary-blue);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .app-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .chicago-map {
+                height: 400px;
+            }
+
+            .brand-text {
+                display: none;
+            }
+
+            .powered-by {
+                margin-left: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <nav class="app-nav">
+            <a href="/" class="app-logo">
+                <div class="logo-icon">
+                    <svg class="logo-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="15" fill="#0EA5E9"/>
+                        <circle cx="16" cy="16" r="12" fill="white"/>
+                        <polygon points="16,6 18,12 24,12 19,16 21,22 16,18 11,22 13,16 8,12 14,12" fill="#DC2626"/>
+                        <circle cx="16" cy="16" r="3" fill="none" stroke="#0EA5E9" stroke-width="1"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <div class="brand-main">OpenFutbol</div>
+                    <div class="brand-sub">Chicago</div>
+                </div>
+                <a href="https://nbhdsoccer.github.io" class="powered-by" onclick="event.stopPropagation();">Powered by NBHD Soccer</a>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#finder">Find Games</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#nbhd">NBHD Soccer</a></li>
+                <li><a href="#cities">More Cities</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="app-container">
+        <main class="map-section" id="finder">
+            <div class="map-header">
+                <h1>Find Pickup Soccer in Chicago</h1>
+                <p class="map-subtitle">OpenFutbol's interactive map showing pickup games across Chicago neighborhoods</p>
+            </div>
+            
+            <div class="chicago-map" id="chicagoMap">
+                <!-- Player avatar moving around the map -->
+                <div class="player-avatar"></div>
+                
+                <!-- Chicago neighborhoods positioned based on actual Chicago map -->
+                <!-- Northwest -->
+                <div class="neighborhood sometimes" style="top: 18%; left: 28%; width: 105px; height: 50px;" data-neighborhood="Logan Square">
+                    Logan Square
+                </div>
+                
+                <!-- North-Central -->
+                <div class="neighborhood sometimes" style="top: 32%; left: 45%; width: 90px; height: 45px;" data-neighborhood="Wicker Park">
+                    Wicker Park
+                </div>
+                
+                <!-- West-Central -->
+                <div class="neighborhood sometimes" style="top: 38%; left: 18%; width: 110px; height: 48px;" data-neighborhood="Humboldt Park">
+                    Humboldt Park
+                </div>
+                
+                <!-- Southwest -->
+                <div class="neighborhood frequent" style="top: 58%; left: 35%; width: 85px; height: 50px;" data-neighborhood="Pilsen">
+                    Pilsen
+                </div>
+                
+                <!-- West -->
+                <div class="neighborhood frequent" style="top: 52%; left: 8%; width: 100px; height: 55px;" data-neighborhood="Little Village">
+                    Little Village
+                </div>
+                
+                <!-- South-Central -->
+                <div class="neighborhood frequent" style="top: 72%; left: 48%; width: 95px; height: 50px;" data-neighborhood="Bridgeport">
+                    Bridgeport
+                </div>
+                
+                <!-- South -->
+                <div class="neighborhood frequent" style="top: 68%; left: 62%; width: 95px; height: 50px;" data-neighborhood="McKinley Park">
+                    McKinley Park
+                </div>
+                
+                <!-- Far South -->
+                <div class="neighborhood rarely" style="top: 85%; left: 45%; width: 85px; height: 45px;" data-neighborhood="Englewood">
+                    Englewood
+                </div>
+            </div>
+            
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #DC2626, #EA580C);"></div>
+                    <span>Play Often</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #0EA5E9, #0C4A6E);"></div>
+                    <span>Play Sometimes</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #6B7280, #9CA3AF);"></div>
+                    <span>Play Rarely</span>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <section class="filters-section">
+                <h3>Filter Games</h3>
+                
+                <div class="filter-group">
+                    <label for="gameType">Game Type</label>
+                    <select id="gameType" class="filter-select">
+                        <option value="all">All Games</option>
+                        <option value="coed">Coed</option>
+                        <option value="mens">Men's Only</option>
+                        <option value="womens">Women's Only</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="neighborhood">Neighborhood</label>
+                    <select id="neighborhood" class="filter-select">
+                        <option value="all">All Neighborhoods</option>
+                        <option value="pilsen">Pilsen</option>
+                        <option value="bridgeport">Bridgeport</option>
+                        <option value="little-village">Little Village</option>
+                        <option value="logan-square">Logan Square</option>
+                        <option value="humboldt-park">Humboldt Park</option>
+                        <option value="mckinley-park">McKinley Park</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="skillLevel">Skill Level</label>
+                    <select id="skillLevel" class="filter-select">
+                        <option value="all">All Levels</option>
+                        <option value="beginner">Beginner Friendly</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="competitive">Competitive</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="searchLocation">Search Location</label>
+                    <input type="text" id="searchLocation" class="filter-input" placeholder="Enter neighborhood or address">
+                </div>
+            </section>
+            
+            <section class="games-list">
+                <h3>Upcoming Games</h3>
+                
+                <div class="game-card">
+                    <div class="game-title">Tuesday Indoor Pickup</div>
+                    <div class="game-details">Tonight 8:00-10:00 PM • YMCA Rauner</div>
+                    <div class="game-details">Coed • All Levels • $10</div>
+                    <span class="game-neighborhood">Pilsen</span>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-title">Women's Wednesday</div>
+                    <div class="game-details">Tomorrow 8:00-10:00 PM • YMCA Rauner</div>
+                    <div class="game-details">Women Only • All Levels • $10</div>
+                    <span class="game-neighborhood">Pilsen</span>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-title">Friday Fun Pickup</div>
+                    <div class="game-details">Friday 8:00-10:00 PM • McKinley Park</div>
+                    <div class="game-details">Coed • Beginner Friendly • $5</div>
+                    <span class="game-neighborhood">McKinley Park</span>
+                </div>
+            </section>
+            
+            <div class="upcoming-feature">
+                <h4>🚀 Coming Soon</h4>
+                <p>Community organizers will be able to manage games directly through OpenFutbol. More cities launching in 2025!</p>
+            </div>
+            
+            <div class="cta-section">
+                <h3>Join Chicago's Soccer Community</h3>
+                <p>Powered by NBHD Soccer - building neighborhood connections through pickup games</p>
+                <a href="https://www.meetup.com/nbhdsoccer/events/" class="cta-button">Find Games on Meetup</a>
+            </div>
+        </aside>
+    </div>
+
+    <section id="about" style="background: var(--surface); padding: 4rem 2rem; margin-top: 2rem;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="margin-bottom: 2rem; color: var(--text-primary); font-size: 2.2rem; font-weight: 800;">About OpenFutbol</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
+                OpenFutbol is an open-source platform connecting pickup soccer communities across cities worldwide. 
+                We believe soccer has the power to bring people together, build communities, and create lasting friendships 
+                through the beautiful game.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
+                Starting in Chicago with our amazing partners at NBHD Soccer, our mission is to make pickup soccer 
+                accessible, visible, and community-driven in every city.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                <a href="chicago-pickup-soccer.html" class="cta-button">Learn About Chicago Pickup</a>
+                <a href="#nbhd" class="cta-button">About NBHD Soccer</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nbhd" style="background: var(--soft-blue); padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 style="margin-bottom: 3rem; color: var(--text-primary); font-size: 2.2rem; font-weight: 800; text-align: center;">Powered by NBHD Soccer</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.3rem;">🏙️ Neighborhood Focus</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        NBHD Soccer organizes pickup games across Chicago's diverse neighborhoods, from Pilsen to Logan Square, 
+                        building connections at the community level.
+                    </p>
+                </div>
+                
+                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <h3 style="color: var(--primary-red); margin-bottom: 1rem; font-size: 1.3rem;">👥 Inclusive Community</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        With dedicated coed and women's games, NBHD Soccer creates welcoming spaces for players of all 
+                        backgrounds and skill levels to enjoy the beautiful game.
+                    </p>
+                </div>
+                
+                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <h3 style="color: var(--success-green); margin-bottom: 1rem; font-size: 1.3rem;">🌱 Grassroots Organizing</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        As a nonprofit organization, NBHD Soccer demonstrates how community organizing can make pickup soccer 
+                        accessible and sustainable in urban environments.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; background: var(--surface); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.4rem;">Learn More About NBHD Soccer</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                    Visit their main website to learn about their community organizing programs, upcoming events, 
+                    and how they're building soccer communities across Chicago neighborhoods.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://nbhdsoccer.github.io" class="cta-button">NBHD Soccer Website</a>
+                    <a href="https://www.meetup.com/nbhdsoccer/" class="cta-button">Join on Meetup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cities" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="margin-bottom: 3rem; color: var(--text-gray); font-size: 2.5rem;">OpenFutbol Cities</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid var(--chicago-red);">
+                    <h3 style="color: var(--chicago-red); margin-bottom: 1rem; font-size: 1.5rem;">🏙️ Chicago</h3>
+                    <p style="color: #6b7280; font-size: 1rem; line-height: 1.6;">
+                        <strong>Status:</strong> Live<br>
+                        <strong>Games:</strong> Weekly pickup in Pilsen, Bridgeport, Logan Square<br>
+                        <strong>Partner:</strong> NBHD Soccer Community
+                    </p>
+                    <a href="#finder" style="display: inline-block; margin-top: 1rem; color: var(--chicago-red); font-weight: 600; text-decoration: none;">View Games →</a>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #9ca3af;">
+                    <h3 style="color: #6b7280; margin-bottom: 1rem; font-size: 1.5rem;">🌉 San Francisco</h3>
+                    <p style="color: #6b7280; font-size: 1rem; line-height: 1.6;">
+                        <strong>Status:</strong> Planning<br>
+                        <strong>Target:</strong> Q3 2025<br>
+                        <strong>Focus:</strong> Mission, Castro, Sunset districts
+                    </p>
+                    <a href="#support" style="display: inline-block; margin-top: 1rem; color: #6b7280; font-weight: 600; text-decoration: none;">Get Involved →</a>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #9ca3af;">
+                    <h3 style="color: #6b7280; margin-bottom: 1rem; font-size: 1.5rem;">🗽 New York</h3>
+                    <p style="color: #6b7280; font-size: 1rem; line-height: 1.6;">
+                        <strong>Status:</strong> Seeking Partners<br>
+                        <strong>Target:</strong> Q4 2025<br>
+                        <strong>Focus:</strong> Brooklyn, Queens, Manhattan parks
+                    </p>
+                    <a href="#support" style="display: inline-block; margin-top: 1rem; color: #6b7280; font-weight: 600; text-decoration: none;">Partner With Us →</a>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, var(--chicago-red) 0%, var(--chicago-blue) 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Want OpenFutbol in Your City?</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 1rem;">We're looking for passionate soccer organizers to bring OpenFutbol to their communities.</p>
+                <a href="#support" style="background: white; color: var(--chicago-red); padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">Start a Chapter</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="margin-bottom: 2rem; color: var(--text-gray);">Support OpenFutbol</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #6b7280; margin-bottom: 2rem;">
+                OpenFutbol is a community-driven, open-source project. We rely on passionate soccer players, 
+                organizers, and supporters to help us expand to new cities and improve our platform.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                <div style="padding: 1.5rem; border: 2px solid var(--border-gray); border-radius: 8px;">
+                    <h4 style="color: var(--chicago-blue); margin-bottom: 1rem;">🧑‍💻 Contribute Code</h4>
+                    <p style="color: #6b7280; font-size: 0.95rem;">Help improve our platform on GitHub</p>
+                </div>
+                <div style="padding: 1.5rem; border: 2px solid var(--border-gray); border-radius: 8px;">
+                    <h4 style="color: var(--chicago-blue); margin-bottom: 1rem;">⚽ Organize Games</h4>
+                    <p style="color: #6b7280; font-size: 0.95rem;">Start pickup soccer in your neighborhood</p>
+                </div>
+                <div style="padding: 1.5rem; border: 2px solid var(--border-gray); border-radius: 8px;">
+                    <h4 style="color: var(--chicago-blue); margin-bottom: 1rem;">🌍 Expand Cities</h4>
+                    <p style="color: #6b7280; font-size: 0.95rem;">Bring OpenFutbol to your city</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="https://www.meetup.com/nbhdsoccer/events/" class="cta-button" style="margin: 0.5rem;">Join Chicago Games</a>
+                <a href="https://github.com/openfutbol" class="cta-button" style="margin: 0.5rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Neighborhood click handler
+        document.querySelectorAll('.neighborhood').forEach(neighborhood => {
+            neighborhood.addEventListener('click', function() {
+                const name = this.dataset.neighborhood;
+                const frequency = this.classList.contains('frequent') ? 'often' : 
+                                this.classList.contains('sometimes') ? 'sometimes' : 'rarely';
+                
+                alert(`${name}\nWe play here: ${frequency}\nClick to see upcoming games in this neighborhood!`);
+                
+                // Future: Filter games by selected neighborhood
+                document.getElementById('neighborhood').value = name.toLowerCase().replace(' ', '-');
+                filterGames();
+            });
+        });
+
+        // Filter functionality (placeholder for API integration)
+        function filterGames() {
+            const gameType = document.getElementById('gameType').value;
+            const neighborhood = document.getElementById('neighborhood').value;
+            const skillLevel = document.getElementById('skillLevel').value;
+            
+            console.log('Filtering games:', { gameType, neighborhood, skillLevel });
+            
+            // Future: Filter displayed games based on selections
+            // This will integrate with Meetup API calls
+        }
+
+        // Add event listeners for filters
+        document.getElementById('gameType').addEventListener('change', filterGames);
+        document.getElementById('neighborhood').addEventListener('change', filterGames);
+        document.getElementById('skillLevel').addEventListener('change', filterGames);
+
+        // Search functionality placeholder
+        document.getElementById('searchLocation').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            console.log('Searching for:', searchTerm);
+            
+            // Future: Search and highlight neighborhoods
+            // Integrate with geocoding for address search
+        });
+
+        // Future API integration points
+        async function loadMeetupEvents() {
+            // Integration point for Meetup API
+            // const events = await fetch('http://www.nbhdsoccer.org/events');
+            console.log('Future: Load events from Meetup API');
+        }
+
+        async function loadCommunityEvents() {
+            // Integration point for community-submitted events
+            console.log('Future: Load community-managed events');
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Chicago Pickup Soccer Finder initialized');
+            // loadMeetupEvents();
+            // loadCommunityEvents();
+        });
+    </script>
+</body>
+</html>
