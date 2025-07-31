@@ -15,6 +15,17 @@ lang: en
 author: OpenFutbol Community
 email: hello@openfutbol.org
 
+# Navigation
+navigation:
+  - title: "Finder"
+    url: "/index.html"
+  - title: "About"
+    url: "#about"
+  - title: "More Cities"
+    url: "#cities"
+  - title: "Developers"
+    url: "/developers.html"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

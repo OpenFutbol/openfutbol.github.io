@@ -7,44 +7,176 @@
     <meta name="description" content="Find pickup soccer games across Chicago neighborhoods. Coed, women's, and competitive games. Interactive map powered by NBHD Soccer community organizing.">
     <meta name="keywords" content="Chicago pickup soccer, coed soccer Chicago, women's soccer Chicago, pickup games, neighborhood soccer, soccer finder, Chicago soccer community, NBHD Soccer">
     
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="NBHD Soccer">
+    <meta name="generator" content="OpenFutbol">
+    <link rel="canonical" href="https://openfutbol.github.io/">
+    
+    <!-- Geographic SEO -->
+    <meta name="geo.region" content="US-IL">
+    <meta name="geo.placename" content="Chicago">
+    <meta name="geo.position" content="41.8781;-87.6298">
+    <meta name="ICBM" content="41.8781, -87.6298">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chicago Pickup Soccer Finder | Find Games Near You">
+    <meta property="og:description" content="Interactive map showing pickup soccer games across Chicago neighborhoods. Join coed, women's, and competitive games organized by NBHD Soccer community.">
+    <meta property="og:url" content="https://openfutbol.github.io/">
+    <meta property="og:site_name" content="OpenFutbol Chicago">
+    <meta property="og:image" content="https://openfutbol.github.io/assets/img/chicago-soccer-map-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Chicago pickup soccer interactive neighborhood map">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chicago Pickup Soccer Finder | Find Games Near You">
+    <meta name="twitter:description" content="Interactive map showing pickup soccer games across Chicago neighborhoods. Join coed, women's, and competitive games.">
+    <meta name="twitter:image" content="https://openfutbol.github.io/assets/img/chicago-soccer-map-preview.jpg">
+    <meta name="twitter:image:alt" content="Chicago pickup soccer interactive neighborhood map">
+    <meta name="twitter:site" content="@NBHDSoccer">
+    <meta name="twitter:creator" content="@NBHDSoccer">
+    
+    <!-- Additional Local Business Meta -->
+    <meta name="business:contact_data:locality" content="Chicago">
+    <meta name="business:contact_data:region" content="Illinois">
+    <meta name="business:contact_data:country_name" content="United States">
+    <meta name="business:contact_data:postal_code" content="60608">
+    
+    <!-- Mobile App Meta -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OpenFutbol Chicago">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" href="assets/img/prof_pic.jpg">
+    <link rel="apple-touch-icon" href="assets/img/prof_pic.jpg">
     
-    <!-- SEO Structured Data -->
+    <!-- Enhanced Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
+      "@type": ["WebApplication", "LocalBusiness", "SportsActivityLocation"],
       "name": "Chicago Pickup Soccer Finder",
+      "alternateName": "OpenFutbol Chicago",
       "description": "Interactive pickup soccer finder for Chicago neighborhoods. Find coed, women's, and competitive pickup games across the city.",
       "url": "https://openfutbol.github.io/",
       "applicationCategory": "Sports & Recreation",
       "operatingSystem": "Web Browser",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
       },
       "publisher": {
         "@type": "Organization",
         "name": "NBHD Soccer",
-        "description": "Chicago neighborhood soccer community organization"
+        "description": "Chicago neighborhood soccer community organization",
+        "url": "https://nbhdsoccer.github.io",
+        "sameAs": [
+          "https://www.meetup.com/nbhdsoccer/",
+          "https://github.com/nbhdsoccer"
+        ]
       },
-      "keywords": ["Chicago pickup soccer", "coed soccer", "women's soccer", "neighborhood soccer", "pickup games"],
+      "creator": {
+        "@type": "Organization", 
+        "name": "NBHD Soccer"
+      },
+      "keywords": ["Chicago pickup soccer", "coed soccer", "women's soccer", "neighborhood soccer", "pickup games", "soccer finder", "Chicago soccer community"],
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": "41.8781",
         "longitude": "-87.6298"
       },
-      "areaServed": {
-        "@type": "City",
-        "name": "Chicago",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Chicago",
+          "addressRegion": "IL",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "Place",
+          "name": "Pilsen",
+          "containedInPlace": {
+            "@type": "City",
+            "name": "Chicago"
+          }
+        },
+        {
+          "@type": "Place", 
+          "name": "Logan Square",
+          "containedInPlace": {
+            "@type": "City",
+            "name": "Chicago"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Bridgeport", 
+          "containedInPlace": {
+            "@type": "City",
+            "name": "Chicago"
+          }
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chicago",
         "addressRegion": "IL",
         "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://www.meetup.com/nbhdsoccer/"
+      },
+      "sameAs": [
+        "https://www.meetup.com/nbhdsoccer/",
+        "https://nbhdsoccer.github.io",
+        "https://github.com/openfutbol"
+      ],
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Chicago Pickup Soccer Games",
+        "itemListElement": [
+          {
+            "@type": "SportsEvent",
+            "name": "Tuesday Indoor Pickup",
+            "location": {
+              "@type": "Place",
+              "name": "YMCA Rauner",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Chicago",
+                "addressRegion": "IL"
+              }
+            },
+            "startDate": "2025-07-31T20:00:00-05:00",
+            "endDate": "2025-07-31T22:00:00-05:00",
+            "offers": {
+              "@type": "Offer",
+              "price": "10",
+              "priceCurrency": "USD"
+            }
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://openfutbol.github.io/#finder?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     }
     </script>
+<!-- ...existing code... -->
     
     <style>
         :root {
@@ -158,29 +290,17 @@
             font-weight: 500;
         }
 
-        .powered-by {
-            background: rgba(255,255,255,0.15);
-            padding: 0.25rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            margin-left: 1rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .powered-by:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
+            margin-right: 1.5rem;
         }
 
         .nav-links a {
@@ -196,6 +316,44 @@
         .nav-links a:hover {
             background: rgba(255,255,255,0.15);
             transform: translateY(-1px);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .cta-nav-button {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            white-space: nowrap;
+        }
+
+        .cta-nav-button:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cta-nav-button.primary {
+            background: white;
+            color: var(--primary-blue);
+            border-color: white;
+        }
+
+        .cta-nav-button.primary:hover {
+            background: rgba(255,255,255,0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
 
         .app-container {
@@ -525,6 +683,28 @@
             .powered-by {
                 margin-left: 0.5rem;
             }
+            .app-nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .brand-text {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .cta-nav-button {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
         }
     </style>
 </head>
@@ -544,14 +724,24 @@
                     <div class="brand-main">OpenFutbol</div>
                     <div class="brand-sub">Chicago</div>
                 </div>
-                <a href="https://nbhdsoccer.github.io" class="powered-by" onclick="event.stopPropagation();">Powered by NBHD Soccer</a>
             </a>
-            <ul class="nav-links">
-                <li><a href="#finder">Find Games</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#nbhd">NBHD Soccer</a></li>
-                <li><a href="#cities">More Cities</a></li>
-            </ul>
+            
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Finder</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="developers.html">Developers</a></li>
+                </ul>
+                
+                <div class="cta-buttons">
+                    <a href="https://nbhdsoccer.github.io/events/pickup.html" class="cta-nav-button primary" target="_blank">
+                        ⚽ Best Pickup in Chicago
+                    </a>
+                    <a href="https://nbhdsoccer.github.io" class="cta-nav-button" target="_blank">
+                        Powered by NBHD Soccer
+                    </a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -560,6 +750,10 @@
             <div class="map-header">
                 <h1>Find Pickup Soccer in Chicago</h1>
                 <p class="map-subtitle">OpenFutbol's interactive map showing pickup games across Chicago neighborhoods</p>
+                <div style="background: #FEF3C7; border: 1px solid #F59E0B; border-radius: 8px; padding: 1rem; margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.2rem;">🚧</span>
+                    <span style="color: #92400E; font-weight: 600; font-size: 0.9rem;">Under Construction - Live pickup data coming soon!</span>
+                </div>
             </div>
             
             <div class="chicago-map" id="chicagoMap">
@@ -611,15 +805,15 @@
             <div class="map-legend">
                 <div class="legend-item">
                     <div class="legend-color" style="background: linear-gradient(135deg, #DC2626, #EA580C);"></div>
-                    <span>Play Often</span>
+                    <span>⚽ Active Hubs</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background: linear-gradient(135deg, #0EA5E9, #0C4A6E);"></div>
-                    <span>Play Sometimes</span>
+                    <span>🌱 Growing Community</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background: linear-gradient(135deg, #6B7280, #9CA3AF);"></div>
-                    <span>Play Rarely</span>
+                    <span>🚀 Emerging Area</span>
                 </div>
             </div>
         </main>
@@ -718,8 +912,8 @@
                 accessible, visible, and community-driven in every city.
             </p>
             <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-                <a href="chicago-pickup-soccer.html" class="cta-button">Learn About Chicago Pickup</a>
-                <a href="#nbhd" class="cta-button">About NBHD Soccer</a>
+                <a href="https://nbhdsoccer.github.io/events/pickup.html" class="cta-button">Learn About Chicago Pickup</a>
+                <a href="#nbhd" class="cta-button">Powered by NBHD Soccer</a>
             </div>
         </div>
     </section>

@@ -1,0 +1,32 @@
+<svg width="100" height="100" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#0EA5E9" stroke-width="4"/>
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+  
+  <!-- Chicago text on top -->
+  <path id="circle-top" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#DC2626">
+    <textPath href="#circle-top" startOffset="25%">CHICAGO</textPath>
+  </text>
+  
+  <!-- Neighborhood Soccer text on bottom -->
+  <path id="circle-bottom" d="M 100,100 m -75,0 a 75,75 0 1,0 150,0" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#DC2626">
+    <textPath href="#circle-bottom" startOffset="75%">NEIGHBORHOOD SOCCER</textPath>
+  </text>
+  
+  <!-- Central star -->
+  <polygon points="100,35 108,65 140,65 118,85 126,115 100,95 74,115 82,85 60,65 92,65" 
+           fill="none" stroke="#DC2626" stroke-width="2"/>
+  
+  <!-- Soccer ball in center -->
+  <circle cx="100" cy="100" r="12" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+  <path d="M 88,100 L 112,100 M 100,88 L 100,112 M 92,92 L 108,108 M 108,92 L 92,108" 
+        stroke="#0EA5E9" stroke-width="1"/>
+  
+  <!-- Side stars -->
+  <polygon points="30,100 34,108 42,108 36,114 38,122 30,118 22,122 24,114 18,108 26,108" 
+           fill="#DC2626"/>
+  <polygon points="170,100 174,108 182,108 176,114 178,122 170,118 162,122 164,114 158,108 166,108" 
+           fill="#DC2626"/>
+</svg>
