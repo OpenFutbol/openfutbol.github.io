@@ -2,18 +2,18 @@
 # These owners will be requested for review on PRs
 
 # Default owner for everything
-* @aparedes
+* @ADParedes
 
 # Core application files
-/index.html @aparedes
-/youth.html @aparedes
-/developers.html @aparedes
-/assets/ @aparedes
+/index.html @ADParedes
+/youth.html @ADParedes
+/developers.html @ADParedes
+/assets/ @ADParedes
 
 # Configuration
-/_config.yml @aparedes
-/Gemfile @aparedes
+/_config.yml @ADParedes
+/Gemfile @ADParedes
 
 # Documentation
-/README.md @aparedes
-/CONTRIBUTING.md @aparedes
+/README.md @ADParedes
+/CONTRIBUTING.md @ADParedes

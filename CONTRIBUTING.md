@@ -73,7 +73,7 @@ assets/css/main.css → Design system and styles
 
 ## Questions?
 
-Open an issue or reach out to [@aparedes](https://github.com/aparedes).
+Open an issue or reach out to [@ADParedes](https://github.com/ADParedes).
 
 ## License
 

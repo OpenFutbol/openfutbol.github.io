@@ -108,9 +108,9 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ## Creator
 
-**Andre Paredes**
-GitHub: [@aparedes](https://github.com/aparedes)
+**Andre D Paredes**
+GitHub: [@ADParedes](https://github.com/ADParedes)
 
 ---
 
-Built in partnership with [NBHD Soccer](https://nbhdsoccer.github.io), an Illinois nonprofit corporation.
+Built in partnership with [NBHD Soccer](https://nbhdsoccer.github.io), an Illinois 501(c)(3) nonprofit.
