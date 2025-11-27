@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Programming | OpenFutbol Chicago</title>
+    <meta name="description" content="Find youth soccer programs across Chicago neighborhoods. Transparent directory of organizations helping kids play the beautiful game.">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://openfutbol.github.io/youth.html">
+    <meta property="og:title" content="Youth Programming | OpenFutbol Chicago">
+    <meta property="og:description" content="Find youth soccer programs across Chicago neighborhoods. Transparent directory helping families find the right programs.">
+    <meta property="og:url" content="https://openfutbol.github.io/youth.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* Youth-specific accent color */
+        :root {
+            --youth-accent: #8B5CF6;
+            --youth-accent-light: #EDE9FE;
+        }
+
+        .youth-theme .page-hero {
+            background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+        }
+
+        .youth-theme .nav-tab.active {
+            color: var(--youth-accent);
+            border-bottom-color: var(--youth-accent);
+        }
+
+        .youth-theme .section-tab.active {
+            color: var(--youth-accent);
+        }
+
+        .youth-theme .btn-primary {
+            background: var(--youth-accent);
+        }
+
+        .youth-theme .btn-primary:hover {
+            background: #7C3AED;
+        }
+
+        .youth-theme .game-tag,
+        .youth-theme .org-link {
+            color: var(--youth-accent);
+        }
+
+        .youth-theme .game-card:hover {
+            border-color: var(--youth-accent);
+        }
+
+        .youth-theme .org-logo {
+            background: var(--youth-accent-light);
+            color: var(--youth-accent);
+        }
+
+        .youth-theme .legend-dot.youth {
+            background: var(--youth-accent);
+        }
+
+        .youth-theme .popup-status.youth {
+            background: var(--youth-accent-light);
+            color: var(--youth-accent);
+        }
+
+        .youth-theme .feature-icon {
+            background: var(--youth-accent-light);
+        }
+    </style>
+</head>
+<body class="youth-theme">
+    <!-- Sticky Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="nav-top">
+                <a href="/" class="brand">
+                    <div class="brand-logo">FUT</div>
+                    <div class="brand-text">
+                        <span class="brand-name">OpenFutbol</span>
+                        <span class="brand-tagline">Chicago</span>
+                    </div>
+                </a>
+
+                <div class="nav-links">
+                    <a href="https://github.com/openfutbol" class="nav-link">GitHub</a>
+                    <a href="developers.html" class="nav-link">Developers</a>
+                    <a href="https://www.meetup.com/chicago-neighborhood-soccer/" class="nav-cta" target="_blank">Join Games</a>
+                </div>
+            </div>
+
+            <!-- App Tabs -->
+            <nav class="nav-tabs">
+                <a href="index.html" class="nav-tab">Community Soccer</a>
+                <a href="youth.html" class="nav-tab active">Youth Programming</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Youth Programming</h1>
+        <p class="subtitle">Transparent directory of youth soccer programs across Chicago neighborhoods. Helping families find the right fit.</p>
+        <div class="hero-badge">
+            Making youth sports infrastructure discoverable
+        </div>
+    </section>
+
+    <!-- Main App Layout -->
+    <div class="app-layout">
+        <main class="main-content">
+            <!-- Section Tabs -->
+            <div class="section-tabs">
+                <button class="section-tab active" data-tab="map">Find Programs</button>
+                <button class="section-tab" data-tab="organizations">Organizations</button>
+                <button class="section-tab" data-tab="sponsors">Sponsors</button>
+            </div>
+
+            <!-- Map Section -->
+            <section id="tab-map" class="tab-content">
+                <div class="map-container">
+                    <div id="chicagoMap"></div>
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: #8B5CF6;"></span>
+                            <span>Youth Program</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot growing"></span>
+                            <span>Community Partner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision Section -->
+                <div class="vision-section" style="background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);">
+                    <h2>Our Mission</h2>
+                    <p>Youth soccer infrastructure exists across Chicago, but it's not always easy to find or compare. OpenFutbol is agnostic - we don't favor any organization. We simply make what exists more transparent and discoverable, especially for families navigating options and for organizations that may lack technology resources.</p>
+                    <div class="fair-principles">
+                        <span class="fair-badge">Findable</span>
+                        <span class="fair-badge">Accessible</span>
+                        <span class="fair-badge">Interoperable</span>
+                        <span class="fair-badge">Reusable</span>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <h2 style="margin: 2rem 0 1rem; font-size: 1.25rem;">Platform Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3>Program Mapping</h3>
+                        <p>Interactive maps showing youth programs across Chicago's neighborhoods.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Organization Directory</h3>
+                        <p>Transparent listings with contact info, programs offered, and how to register.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Program Comparison <span class="coming-badge">Soon</span></h3>
+                        <p>Compare programs by age group, cost, location, and schedule.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <div class="feature-icon">💰</div>
+                        <h3>Scholarship Finder <span class="coming-badge">Soon</span></h3>
+                        <p>Discover financial assistance options for youth soccer.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <div class="feature-icon">📅</div>
+                        <h3>Registration Calendar <span class="coming-badge">Soon</span></h3>
+                        <p>Track registration windows across all programs.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <div class="feature-icon">🏟️</div>
+                        <h3>Facility Directory <span class="coming-badge">Soon</span></h3>
+                        <p>Map of fields, indoor facilities, and training locations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Organizations Section -->
+            <section id="tab-organizations" class="tab-content" style="display: none;">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Youth Organizations</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">These organizations provide youth soccer programming across Chicago. OpenFutbol helps bridge technology gaps, making programs more discoverable regardless of an organization's digital resources.</p>
+
+                        <div class="org-card">
+                            <div class="org-header">
+                                <div class="org-logo">CPD</div>
+                                <div class="org-info">
+                                    <h3>Chicago Park District Soccer</h3>
+                                    <p>City-wide youth soccer programming at neighborhood parks</p>
+                                </div>
+                            </div>
+                            <div class="org-tags">
+                                <span class="org-tag">Ages 4-14</span>
+                                <span class="org-tag">Recreational</span>
+                                <span class="org-tag">Low Cost</span>
+                                <span class="org-tag">City-wide</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Offers spring, summer, and fall leagues at park locations throughout Chicago. Registration typically opens 6 weeks before season start.</p>
+                            <div class="org-links">
+                                <a href="https://www.chicagoparkdistrict.com/programs-memberships/soccer" class="org-link" target="_blank">Website</a>
+                                <a href="tel:312-742-7529" class="org-link">Call: 312-742-7529</a>
+                            </div>
+                        </div>
+
+                        <div class="org-card">
+                            <div class="org-header">
+                                <div class="org-logo">FC</div>
+                                <div class="org-info">
+                                    <h3>FC United Soccer</h3>
+                                    <p>Competitive and recreational youth soccer in South Chicago</p>
+                                </div>
+                            </div>
+                            <div class="org-tags">
+                                <span class="org-tag">Ages 5-18</span>
+                                <span class="org-tag">Competitive</span>
+                                <span class="org-tag">Travel Teams</span>
+                                <span class="org-tag">South Side</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Established club offering developmental and competitive tracks. Tryouts held annually in spring.</p>
+                            <div class="org-links">
+                                <span class="org-link" style="color: var(--text-muted);">Website coming soon</span>
+                            </div>
+                        </div>
+
+                        <div class="org-card">
+                            <div class="org-header">
+                                <div class="org-logo">LVS</div>
+                                <div class="org-info">
+                                    <h3>Little Village Soccer Academy</h3>
+                                    <p>Community-based youth development in La Villita</p>
+                                </div>
+                            </div>
+                            <div class="org-tags">
+                                <span class="org-tag">Ages 6-16</span>
+                                <span class="org-tag">Community-based</span>
+                                <span class="org-tag">Bilingual</span>
+                                <span class="org-tag">Little Village</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Grassroots program focused on neighborhood youth. Practices at local parks and school facilities.</p>
+                            <div class="org-links">
+                                <span class="org-link" style="color: var(--text-muted);">Contact coming soon</span>
+                            </div>
+                        </div>
+
+                        <div class="org-card">
+                            <div class="org-header">
+                                <div class="org-logo">NSL</div>
+                                <div class="org-info">
+                                    <h3>Neighborhood Soccer League</h3>
+                                    <p>Recreational league for West Side neighborhoods</p>
+                                </div>
+                            </div>
+                            <div class="org-tags">
+                                <span class="org-tag">Ages 5-12</span>
+                                <span class="org-tag">Recreational</span>
+                                <span class="org-tag">Affordable</span>
+                                <span class="org-tag">West Side</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Low-barrier recreational league focused on fun and fundamentals. Scholarships available.</p>
+                            <div class="org-links">
+                                <span class="org-link" style="color: var(--text-muted);">Contact coming soon</span>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; padding: 2rem; background: var(--background); border-radius: var(--radius-md); margin-top: 1.5rem;">
+                            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Run a youth program we should list?</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Help families find your organization. We'll add your info for free.</p>
+                            <a href="https://github.com/openfutbol/openfutbol.github.io/issues" class="btn btn-secondary">Add Your Organization</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sponsors Section -->
+            <section id="tab-sponsors" class="tab-content" style="display: none;">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Sponsors & Partners</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div style="text-align: center; padding: 3rem; background: var(--background); border-radius: var(--radius-md); border: 2px dashed var(--border);">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">⚽</div>
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Support Youth Soccer</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 400px; margin: 0 auto 1.5rem;">Help us make youth soccer information accessible to all Chicago families. Sponsor the platform that connects kids to the game.</p>
+                            <a href="mailto:hello@openfutbol.org" class="btn btn-primary">Become a Sponsor</a>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--text-secondary);">Why This Matters</h3>
+                            <div style="background: var(--background); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">
+                                    Many youth soccer organizations, especially grassroots and community-based programs, lack the technology resources to be easily discoverable online. This creates an uneven playing field where well-resourced clubs dominate search results while equally valuable community programs remain hidden.
+                                </p>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-top: 1rem;">
+                                    OpenFutbol applies <strong>FAIR principles</strong> (Findable, Accessible, Interoperable, Reusable) to level this field. We believe the infrastructure exists - it just needs to be visible.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--text-secondary);">Community Partners</h3>
+                            <div class="org-card">
+                                <div class="org-header">
+                                    <div class="org-logo" style="background: var(--active-light); color: var(--active);">NS</div>
+                                    <div class="org-info">
+                                        <h3>NBHD Soccer</h3>
+                                        <p>Illinois nonprofit providing technology infrastructure for community soccer</p>
+                                    </div>
+                                </div>
+                                <div class="org-links">
+                                    <a href="https://nbhdsoccer.github.io" class="org-link" target="_blank">Website</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3 class="panel-title">Filter Programs</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="filter-section">
+                        <label class="filter-label">Age Group</label>
+                        <select id="ageGroup" class="filter-select">
+                            <option value="all">All Ages</option>
+                            <option value="4-6">Ages 4-6</option>
+                            <option value="7-10">Ages 7-10</option>
+                            <option value="11-14">Ages 11-14</option>
+                            <option value="15-18">Ages 15-18</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-section">
+                        <label class="filter-label">Neighborhood</label>
+                        <select id="neighborhood" class="filter-select">
+                            <option value="all">All Neighborhoods</option>
+                            <option value="little-village">Little Village</option>
+                            <option value="pilsen">Pilsen</option>
+                            <option value="humboldt-park">Humboldt Park</option>
+                            <option value="bridgeport">Bridgeport</option>
+                            <option value="mckinley-park">McKinley Park</option>
+                            <option value="wicker-park">Wicker Park</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-section">
+                        <label class="filter-label">Program Type</label>
+                        <select id="programType" class="filter-select">
+                            <option value="all">All Types</option>
+                            <option value="recreational">Recreational</option>
+                            <option value="competitive">Competitive</option>
+                            <option value="camp">Camps & Clinics</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-section">
+                        <label class="filter-label">Search</label>
+                        <input type="text" id="searchLocation" class="filter-input" placeholder="Organization or neighborhood...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel" style="margin-top: 1rem;">
+                <div class="panel-header">
+                    <h3 class="panel-title">Registration Open</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="game-card">
+                        <div class="game-title">Park District Spring</div>
+                        <div class="game-meta">Registration: Dec-Feb</div>
+                        <span class="game-tag" style="background: var(--youth-accent-light); color: var(--youth-accent);">City-wide</span>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-title">Summer Camps</div>
+                        <div class="game-meta">Registration: Mar-May</div>
+                        <span class="game-tag" style="background: var(--youth-accent-light); color: var(--youth-accent);">Various</span>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-title">Fall League Tryouts</div>
+                        <div class="game-meta">Tryouts: Apr-May</div>
+                        <span class="game-tag" style="background: var(--youth-accent-light); color: var(--youth-accent);">Competitive</span>
+                    </div>
+
+                    <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem;">More registration info coming soon</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="brand">
+                    <div class="brand-logo" style="background: white; color: var(--primary);">FUT</div>
+                    <span class="brand-name" style="color: white;">OpenFutbol</span>
+                </div>
+                <p>Open-source platform making community soccer infrastructure findable, accessible, interoperable, and reusable.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Platform</h4>
+                <a href="index.html">Community Soccer</a>
+                <a href="youth.html">Youth Programming</a>
+                <a href="developers.html">Developers</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Community</h4>
+                <a href="https://www.meetup.com/chicago-neighborhood-soccer/" target="_blank">Join Games</a>
+                <a href="https://nbhdsoccer.github.io" target="_blank">NBHD Soccer</a>
+                <a href="https://github.com/openfutbol" target="_blank">GitHub</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>FAIR Principles</h4>
+                <a href="#">Findable</a>
+                <a href="#">Accessible</a>
+                <a href="#">Interoperable</a>
+                <a href="#">Reusable</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>OpenFutbol Chicago</span>
+            <span>Created by <a href="https://github.com/aparedes" style="color: inherit; text-decoration: underline;">Andre Paredes</a></span>
+            <span>Open Source - MIT License</span>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.section-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.dataset.tab;
+
+                document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.getElementById('tab-' + tabId).style.display = 'block';
+
+                if (tabId === 'map' && typeof map !== 'undefined') {
+                    setTimeout(() => map.invalidateSize(), 100);
+                }
+            });
+        });
+
+        // Youth program locations
+        const youthPrograms = [
+            {
+                name: 'Little Village',
+                coords: [41.8456, -87.7132],
+                type: 'program',
+                description: 'Little Village Soccer Academy - Community-based youth development',
+                info: 'Ages 6-16, Bilingual program'
+            },
+            {
+                name: 'Pilsen',
+                coords: [41.8525, -87.6563],
+                type: 'program',
+                description: 'Park District programs at Harrison Park',
+                info: 'Ages 4-14, Recreational'
+            },
+            {
+                name: 'Humboldt Park',
+                coords: [41.9022, -87.7016],
+                type: 'partner',
+                description: 'Community sports programs in the park',
+                info: 'Summer camps available'
+            },
+            {
+                name: 'Bridgeport',
+                coords: [41.8381, -87.6506],
+                type: 'program',
+                description: 'McGuane Park youth soccer programs',
+                info: 'Ages 5-12, Low cost'
+            },
+            {
+                name: 'McKinley Park',
+                coords: [41.8317, -87.6732],
+                type: 'program',
+                description: 'Park District soccer at McKinley Park',
+                info: 'Spring and Fall seasons'
+            },
+            {
+                name: 'Wicker Park',
+                coords: [41.9088, -87.6796],
+                type: 'partner',
+                description: 'Youth clinics and camps',
+                info: 'Summer programming'
+            }
+        ];
+
+        // Create marker icon
+        function createMarkerIcon(type) {
+            const color = type === 'program' ? '#8B5CF6' : '#F59E0B';
+            return L.divIcon({
+                className: 'custom-marker',
+                html: `<div style="
+                    width: 28px;
+                    height: 28px;
+                    background: ${color};
+                    border: 3px solid white;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                "></div>`,
+                iconSize: [28, 28],
+                iconAnchor: [14, 14],
+                popupAnchor: [0, -14]
+            });
+        }
+
+        // Create popup
+        function createPopupContent(p) {
+            const statusClass = p.type === 'program' ? 'youth' : 'growing';
+            const statusText = p.type === 'program' ? 'Youth Program' : 'Partner';
+            return `
+                <div class="popup-title">${p.name}</div>
+                <div class="popup-status ${statusClass}">${statusText}</div>
+                <div class="popup-desc">${p.description}</div>
+                <div class="popup-desc" style="margin-top: 6px; font-weight: 600;">${p.info}</div>
+            `;
+        }
+
+        // Initialize map
+        const map = L.map('chicagoMap', { scrollWheelZoom: false }).setView([41.8650, -87.6800], 12);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18
+        }).addTo(map);
+
+        youthPrograms.forEach(p => {
+            const marker = L.marker(p.coords, { icon: createMarkerIcon(p.type) }).addTo(map);
+            marker.bindPopup(createPopupContent(p), { maxWidth: 250 });
+        });
+
+        map.on('focus', () => map.scrollWheelZoom.enable());
+        map.on('blur', () => map.scrollWheelZoom.disable());
+
+        document.getElementById('searchLocation').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            if (searchTerm.length > 2) {
+                const match = youthPrograms.find(p => p.name.toLowerCase().includes(searchTerm));
+                if (match) map.setView(match.coords, 14);
+            }
+        });
+    </script>
+</body>
+</html>

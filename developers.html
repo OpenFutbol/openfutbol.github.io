@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers | OpenFutbol Chicago</title>
+    <meta name="description" content="Contribute to OpenFutbol - open-source platform for community soccer. Built with FAIR principles.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="nav-top">
+                <a href="/" class="brand">
+                    <div class="brand-logo">FUT</div>
+                    <div class="brand-text">
+                        <span class="brand-name">OpenFutbol</span>
+                        <span class="brand-tagline">Chicago</span>
+                    </div>
+                </a>
+
+                <div class="nav-links">
+                    <a href="https://github.com/openfutbol" class="nav-link active">GitHub</a>
+                    <a href="developers.html" class="nav-link active">Developers</a>
+                    <a href="https://www.meetup.com/chicago-neighborhood-soccer/" class="nav-cta" target="_blank">Join Games</a>
+                </div>
+            </div>
+
+            <!-- App Tabs -->
+            <nav class="nav-tabs">
+                <a href="index.html" class="nav-tab">Community Soccer</a>
+                <a href="youth.html" class="nav-tab">Youth Programming</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+        <h1>Build With Us</h1>
+        <p class="subtitle">Open-source platform applying FAIR principles to community soccer infrastructure.</p>
+        <div class="hero-badge">
+            <a href="https://github.com/openfutbol" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div style="max-width: 1000px; margin: 0 auto; padding: 2rem;">
+
+        <!-- Vision Section -->
+        <div class="vision-section" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);">
+            <h2>FAIR Principles for Soccer</h2>
+            <p>OpenFutbol applies data science principles to community sports. We believe the infrastructure already exists in neighborhoods - it's just not always discoverable. By making soccer resources Findable, Accessible, Interoperable, and Reusable, we help communities connect.</p>
+            <div class="fair-principles">
+                <span class="fair-badge">Findable - Discoverable by humans and machines</span>
+                <span class="fair-badge">Accessible - Open protocols, no barriers</span>
+                <span class="fair-badge">Interoperable - Works with existing systems</span>
+                <span class="fair-badge">Reusable - Remixable for other cities</span>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <h2 style="margin: 2rem 0 1rem; font-size: 1.25rem;">Technology Stack</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Frontend</h3>
+                <p>Vanilla HTML/CSS/JS, Leaflet.js maps, Jekyll static site. No framework lock-in - easy to contribute.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Hosting</h3>
+                <p>GitHub Pages with Jekyll build. Free, open, and forkable for other cities.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Design</h3>
+                <p>Inter + Space Grotesk fonts. CSS custom properties. Responsive, accessible, fast.</p>
+            </div>
+        </div>
+
+        <!-- Contribution Areas -->
+        <h2 style="margin: 2rem 0 1rem; font-size: 1.25rem;">How to Contribute</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: var(--active-light);">1</div>
+                <h3>Add Organizations</h3>
+                <p>Know a soccer org we should list? Open an issue or PR with their info. Help make programs discoverable.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: var(--active-light);">2</div>
+                <h3>Improve Maps</h3>
+                <p>Add neighborhood markers, improve coordinates, enhance popups. Make the map more useful.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: var(--active-light);">3</div>
+                <h3>Build Features</h3>
+                <p>Check our GitHub issues for "coming soon" features. Calendar integration, filtering, search.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: var(--active-light);">4</div>
+                <h3>Fork for Your City</h3>
+                <p>Take OpenFutbol to your city. The codebase is designed to be remixable and city-agnostic.</p>
+            </div>
+        </div>
+
+        <!-- Coming Soon Features -->
+        <h2 style="margin: 2rem 0 1rem; font-size: 1.25rem;">Roadmap</h2>
+        <div class="panel">
+            <div class="panel-body">
+                <div class="feature-grid" style="margin: 0;">
+                    <div class="feature-card coming-soon">
+                        <h3>Meetup API Integration <span class="coming-badge">Priority</span></h3>
+                        <p>Pull live game data from Chicago Neighborhood Soccer Meetup group.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <h3>Organization Submission Form <span class="coming-badge">Priority</span></h3>
+                        <p>Self-service form for orgs to add themselves to the directory.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <h3>Multi-City Support <span class="coming-badge">Soon</span></h3>
+                        <p>Architecture for deploying OpenFutbol in other cities.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <h3>Search & Filters <span class="coming-badge">Soon</span></h3>
+                        <p>Working filter functionality for games and programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; padding: 3rem; background: var(--background); border-radius: var(--radius-lg); margin: 2rem 0; border: 1px solid var(--border);">
+            <h2 style="margin-bottom: 0.5rem;">Ready to Contribute?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Join developers building open infrastructure for community sports.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com/openfutbol/openfutbol.github.io" class="btn btn-primary" target="_blank">View Repository</a>
+                <a href="https://github.com/openfutbol/openfutbol.github.io/issues" class="btn btn-secondary" target="_blank">Browse Issues</a>
+            </div>
+        </div>
+
+        <!-- Partner Info -->
+        <div class="org-card">
+            <div class="org-header">
+                <div class="org-logo" style="background: var(--active-light); color: var(--active);">NS</div>
+                <div class="org-info">
+                    <h3>Built in Partnership with NBHD Soccer</h3>
+                    <p>Illinois nonprofit corporation (501c3 pending) providing infrastructure for Chicago's community soccer</p>
+                </div>
+            </div>
+            <div class="org-links">
+                <a href="https://nbhdsoccer.github.io" class="org-link" target="_blank">NBHD Soccer Website</a>
+                <a href="https://www.meetup.com/chicago-neighborhood-soccer/" class="org-link" target="_blank">Meetup Group</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="brand">
+                    <div class="brand-logo" style="background: white; color: var(--primary);">FUT</div>
+                    <span class="brand-name" style="color: white;">OpenFutbol</span>
+                </div>
+                <p>Open-source platform making community soccer infrastructure findable, accessible, interoperable, and reusable.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Platform</h4>
+                <a href="index.html">Community Soccer</a>
+                <a href="youth.html">Youth Programming</a>
+                <a href="developers.html">Developers</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Community</h4>
+                <a href="https://www.meetup.com/chicago-neighborhood-soccer/" target="_blank">Join Games</a>
+                <a href="https://nbhdsoccer.github.io" target="_blank">NBHD Soccer</a>
+                <a href="https://github.com/openfutbol" target="_blank">GitHub</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>FAIR Principles</h4>
+                <a href="#">Findable</a>
+                <a href="#">Accessible</a>
+                <a href="#">Interoperable</a>
+                <a href="#">Reusable</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>OpenFutbol Chicago</span>
+            <span>Created by <a href="https://github.com/aparedes" style="color: inherit; text-decoration: underline;">Andre Paredes</a></span>
+            <span>Open Source - MIT License</span>
+        </div>
+    </footer>
+</body>
+</html>

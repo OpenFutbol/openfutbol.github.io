@@ -1,0 +1,41 @@
+# OpenFutbol Site Configuration
+title: "OpenFutbol Chicago"
+description: "Open-source platform connecting pickup soccer communities. Find games, build community, play beautiful football."
+url: "https://openfutbol.github.io"
+baseurl: ""
+
+# GitHub Pages minimal setup
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site settings
+lang: en
+author: OpenFutbol Community
+email: hello@openfutbol.org
+
+# Navigation
+navigation:
+  - title: "Finder"
+    url: "/index.html"
+  - title: "About"
+    url: "#about"
+  - title: "More Cities"
+    url: "#cities"
+  - title: "Developers"
+    url: "/developers.html"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+sass:
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
+  - README.md

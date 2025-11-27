@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Soccer | OpenFutbol Chicago</title>
+    <meta name="description" content="Find pickup soccer games across Chicago neighborhoods. Open-source platform applying FAIR principles to make soccer infrastructure findable, accessible, interoperable, and reusable.">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://openfutbol.github.io/">
+    <meta property="og:title" content="Community Soccer | OpenFutbol Chicago">
+    <meta property="og:description" content="Find pickup soccer games across Chicago neighborhoods. Powered by Chicago Neighborhood Soccer.">
+    <meta property="og:url" content="https://openfutbol.github.io/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="nav-top">
+                <a href="/" class="brand">
+                    <div class="brand-logo">FUT</div>
+                    <div class="brand-text">
+                        <span class="brand-name">OpenFutbol</span>
+                        <span class="brand-tagline">Chicago</span>
+                    </div>
+                </a>
+
+                <div class="nav-links">
+                    <a href="https://github.com/openfutbol" class="nav-link">GitHub</a>
+                    <a href="developers.html" class="nav-link">Developers</a>
+                    <a href="https://www.meetup.com/chicago-neighborhood-soccer/" class="nav-cta" target="_blank">Join Games</a>
+                </div>
+            </div>
+
+            <!-- App Tabs -->
+            <nav class="nav-tabs">
+                <a href="index.html" class="nav-tab active">Community Soccer</a>
+                <a href="youth.html" class="nav-tab">Youth Programming</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Community Soccer</h1>
+        <p class="subtitle">Find and join pickup games across Chicago neighborhoods. Open infrastructure for the beautiful game.</p>
+        <div class="hero-badge">
+            Powered by <a href="https://www.meetup.com/chicago-neighborhood-soccer/" target="_blank">Chicago Neighborhood Soccer</a>
+        </div>
+    </section>
+
+    <!-- Main App Layout -->
+    <div class="app-layout">
+        <main class="main-content">
+            <!-- Section Tabs -->
+            <div class="section-tabs">
+                <button class="section-tab active" data-tab="map">Find Games</button>
+                <button class="section-tab" data-tab="organizations">Organizations</button>
+                <button class="section-tab" data-tab="sponsors">Sponsors</button>
+            </div>
+
+            <!-- Map Section -->
+            <section id="tab-map" class="tab-content">
+                <div class="map-container">
+                    <div id="chicagoMap"></div>
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot active"></span>
+                            <span>Active Hub</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot growing"></span>
+                            <span>Growing Community</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision Section -->
+                <div class="vision-section">
+                    <h2>Our Vision</h2>
+                    <p>OpenFutbol is an agnostic platform that enhances existing soccer infrastructure. We believe the infrastructure already exists in communities - it's just not always visible or accessible. By adopting technology principles like FAIR, we make what exists more discoverable and useful for everyone.</p>
+                    <div class="fair-principles">
+                        <span class="fair-badge">Findable</span>
+                        <span class="fair-badge">Accessible</span>
+                        <span class="fair-badge">Interoperable</span>
+                        <span class="fair-badge">Reusable</span>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <h2 style="margin: 2rem 0 1rem; font-size: 1.25rem;">Platform Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3>Neighborhood Mapping</h3>
+                        <p>Interactive maps showing pickup games across Chicago's diverse neighborhoods.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Organization Directory</h3>
+                        <p>Connect with local groups organizing games in your community.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <div class="feature-icon">📅</div>
+                        <h3>Event Calendar <span class="coming-badge">Soon</span></h3>
+                        <p>Unified calendar pulling from multiple community organizers.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <div class="feature-icon">📊</div>
+                        <h3>Community Stats <span class="coming-badge">Soon</span></h3>
+                        <p>Track game frequency, player counts, and neighborhood activity.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <div class="feature-icon">🔔</div>
+                        <h3>Game Alerts <span class="coming-badge">Soon</span></h3>
+                        <p>Get notified when games are happening in your preferred areas.</p>
+                    </div>
+                    <div class="feature-card coming-soon">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Multi-City <span class="coming-badge">Soon</span></h3>
+                        <p>Expanding beyond Chicago to other cities with active communities.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Organizations Section -->
+            <section id="tab-organizations" class="tab-content" style="display: none;">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Community Organizations</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">These organizations help make pickup soccer accessible across Chicago. OpenFutbol is agnostic - we help surface what already exists and bridge technology gaps.</p>
+
+                        <div class="org-card">
+                            <div class="org-header">
+                                <div class="org-logo">NBHD</div>
+                                <div class="org-info">
+                                    <h3>NBHD Soccer</h3>
+                                    <p>Weekly indoor and outdoor pickup games across Chicago neighborhoods</p>
+                                </div>
+                            </div>
+                            <div class="org-tags">
+                                <span class="org-tag">Coed</span>
+                                <span class="org-tag">Women's Games</span>
+                                <span class="org-tag">All Levels</span>
+                                <span class="org-tag">Pilsen</span>
+                            </div>
+                            <div class="org-links">
+                                <a href="https://www.meetup.com/chicago-neighborhood-soccer/" class="org-link" target="_blank">Meetup</a>
+                                <a href="https://nbhdsoccer.github.io" class="org-link" target="_blank">Website</a>
+                            </div>
+                        </div>
+
+                        <div class="org-card">
+                            <div class="org-header">
+                                <div class="org-logo">LV</div>
+                                <div class="org-info">
+                                    <h3>Little Village Soccer</h3>
+                                    <p>Community pickup games in La Villita parks</p>
+                                </div>
+                            </div>
+                            <div class="org-tags">
+                                <span class="org-tag">Outdoor</span>
+                                <span class="org-tag">Family Friendly</span>
+                                <span class="org-tag">Little Village</span>
+                            </div>
+                            <div class="org-links">
+                                <span class="org-link" style="color: var(--text-muted);">Contact coming soon</span>
+                            </div>
+                        </div>
+
+                        <div class="org-card">
+                            <div class="org-header">
+                                <div class="org-logo">HP</div>
+                                <div class="org-info">
+                                    <h3>Humboldt Park Pickup</h3>
+                                    <p>Weekend games in Humboldt Park</p>
+                                </div>
+                            </div>
+                            <div class="org-tags">
+                                <span class="org-tag">Weekend</span>
+                                <span class="org-tag">Casual</span>
+                                <span class="org-tag">Humboldt Park</span>
+                            </div>
+                            <div class="org-links">
+                                <span class="org-link" style="color: var(--text-muted);">Contact coming soon</span>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; padding: 2rem; background: var(--background); border-radius: var(--radius-md); margin-top: 1.5rem;">
+                            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Know an organization we should list?</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Help us make soccer more discoverable in your neighborhood.</p>
+                            <a href="https://github.com/openfutbol/openfutbol.github.io/issues" class="btn btn-secondary">Suggest Organization</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sponsors Section -->
+            <section id="tab-sponsors" class="tab-content" style="display: none;">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Sponsors & Partners</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div style="text-align: center; padding: 3rem; background: var(--background); border-radius: var(--radius-md); border: 2px dashed var(--border);">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Sponsor Spots Available</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 400px; margin: 0 auto 1.5rem;">Support open-source community soccer infrastructure. Help us keep games accessible and free for all players.</p>
+                            <a href="mailto:hello@openfutbol.org" class="btn btn-primary">Become a Sponsor</a>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--text-secondary);">Community Partners</h3>
+                            <div class="org-card">
+                                <div class="org-header">
+                                    <div class="org-logo" style="background: var(--active-light); color: var(--active);">NS</div>
+                                    <div class="org-info">
+                                        <h3>NBHD Soccer</h3>
+                                        <p>Illinois nonprofit corporation (501c3 pending) powering Chicago's community soccer infrastructure</p>
+                                    </div>
+                                </div>
+                                <div class="org-links">
+                                    <a href="https://nbhdsoccer.github.io" class="org-link" target="_blank">Website</a>
+                                    <a href="https://www.meetup.com/chicago-neighborhood-soccer/" class="org-link" target="_blank">Meetup</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3 class="panel-title">Filter Games</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="filter-section">
+                        <label class="filter-label">Game Type</label>
+                        <select id="gameType" class="filter-select">
+                            <option value="all">All Games</option>
+                            <option value="coed">Coed</option>
+                            <option value="womens">Women's</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-section">
+                        <label class="filter-label">Neighborhood</label>
+                        <select id="neighborhood" class="filter-select">
+                            <option value="all">All Neighborhoods</option>
+                            <option value="little-village">Little Village</option>
+                            <option value="pilsen">Pilsen</option>
+                            <option value="humboldt-park">Humboldt Park</option>
+                            <option value="bridgeport">Bridgeport</option>
+                            <option value="mckinley-park">McKinley Park</option>
+                            <option value="wicker-park">Wicker Park</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-section">
+                        <label class="filter-label">Skill Level</label>
+                        <select id="skillLevel" class="filter-select">
+                            <option value="all">All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="competitive">Competitive</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-section">
+                        <label class="filter-label">Search</label>
+                        <input type="text" id="searchLocation" class="filter-input" placeholder="Neighborhood name...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel" style="margin-top: 1rem;">
+                <div class="panel-header">
+                    <h3 class="panel-title">Upcoming Games</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="game-card">
+                        <div class="game-title">Tuesday Indoor Pickup</div>
+                        <div class="game-meta">8:00 PM - YMCA Rauner</div>
+                        <span class="game-tag">Pilsen</span>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-title">Women's Wednesday</div>
+                        <div class="game-meta">8:00 PM - YMCA Rauner</div>
+                        <span class="game-tag">Pilsen</span>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-title">Friday Pickup</div>
+                        <div class="game-meta">6:00 PM - McKinley Park</div>
+                        <span class="game-tag">McKinley Park</span>
+                    </div>
+
+                    <a href="https://www.meetup.com/chicago-neighborhood-soccer/events/" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 0.5rem;" target="_blank">View All Games</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="brand">
+                    <div class="brand-logo" style="background: white; color: var(--primary);">FUT</div>
+                    <span class="brand-name" style="color: white;">OpenFutbol</span>
+                </div>
+                <p>Open-source platform making community soccer infrastructure findable, accessible, interoperable, and reusable.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Platform</h4>
+                <a href="index.html">Community Soccer</a>
+                <a href="youth.html">Youth Programming</a>
+                <a href="developers.html">Developers</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Community</h4>
+                <a href="https://www.meetup.com/chicago-neighborhood-soccer/" target="_blank">Join Games</a>
+                <a href="https://nbhdsoccer.github.io" target="_blank">NBHD Soccer</a>
+                <a href="https://github.com/openfutbol" target="_blank">GitHub</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>FAIR Principles</h4>
+                <a href="#">Findable</a>
+                <a href="#">Accessible</a>
+                <a href="#">Interoperable</a>
+                <a href="#">Reusable</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>OpenFutbol Chicago</span>
+            <span>Created by <a href="https://github.com/aparedes" style="color: inherit; text-decoration: underline;">Andre Paredes</a></span>
+            <span>Open Source - MIT License</span>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.section-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.dataset.tab;
+
+                // Update tab states
+                document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                // Show/hide content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.getElementById('tab-' + tabId).style.display = 'block';
+
+                // Invalidate map size if switching to map tab
+                if (tabId === 'map' && typeof map !== 'undefined') {
+                    setTimeout(() => map.invalidateSize(), 100);
+                }
+            });
+        });
+
+        // Chicago neighborhood data
+        const neighborhoods = [
+            {
+                name: 'Little Village',
+                coords: [41.8456, -87.7132],
+                status: 'active',
+                description: 'Active pickup community in La Villita. Regular games at local parks.',
+                games: 'Weekly outdoor games'
+            },
+            {
+                name: 'Pilsen',
+                coords: [41.8525, -87.6563],
+                status: 'active',
+                description: 'Home of Chicago Neighborhood Soccer weekly indoor games at YMCA Rauner.',
+                games: 'Tuesdays & Wednesdays at YMCA'
+            },
+            {
+                name: 'Humboldt Park',
+                coords: [41.9022, -87.7016],
+                status: 'growing',
+                description: 'Growing soccer community with games in the park.',
+                games: 'Weekend pickup games'
+            },
+            {
+                name: 'Bridgeport',
+                coords: [41.8381, -87.6506],
+                status: 'active',
+                description: 'Strong neighborhood soccer culture near Sox park.',
+                games: 'Regular community games'
+            },
+            {
+                name: 'McKinley Park',
+                coords: [41.8317, -87.6732],
+                status: 'active',
+                description: 'Popular park with dedicated soccer fields.',
+                games: 'Friday evening pickup'
+            },
+            {
+                name: 'Wicker Park',
+                coords: [41.9088, -87.6796],
+                status: 'growing',
+                description: 'Urban pickup scene in the park and nearby fields.',
+                games: 'Casual weekend games'
+            }
+        ];
+
+        // Create marker icon
+        function createMarkerIcon(status) {
+            const color = status === 'active' ? '#10B981' : '#F59E0B';
+            return L.divIcon({
+                className: 'custom-marker',
+                html: `<div style="
+                    width: 28px;
+                    height: 28px;
+                    background: ${color};
+                    border: 3px solid white;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                "></div>`,
+                iconSize: [28, 28],
+                iconAnchor: [14, 14],
+                popupAnchor: [0, -14]
+            });
+        }
+
+        // Create popup content
+        function createPopupContent(n) {
+            const statusClass = n.status === 'active' ? 'active' : 'growing';
+            const statusText = n.status === 'active' ? 'Active Hub' : 'Growing';
+            return `
+                <div class="popup-title">${n.name}</div>
+                <div class="popup-status ${statusClass}">${statusText}</div>
+                <div class="popup-desc">${n.description}</div>
+                <div class="popup-desc" style="margin-top: 6px; font-weight: 600;">${n.games}</div>
+            `;
+        }
+
+        // Initialize map
+        const map = L.map('chicagoMap', { scrollWheelZoom: false }).setView([41.8650, -87.6800], 12);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18
+        }).addTo(map);
+
+        // Add markers
+        neighborhoods.forEach(n => {
+            const marker = L.marker(n.coords, { icon: createMarkerIcon(n.status) }).addTo(map);
+            marker.bindPopup(createPopupContent(n), { maxWidth: 250 });
+        });
+
+        // Enable scroll zoom on focus
+        map.on('focus', () => map.scrollWheelZoom.enable());
+        map.on('blur', () => map.scrollWheelZoom.disable());
+
+        // Search functionality
+        document.getElementById('searchLocation').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            if (searchTerm.length > 2) {
+                const match = neighborhoods.find(n => n.name.toLowerCase().includes(searchTerm));
+                if (match) map.setView(match.coords, 14);
+            }
+        });
+    </script>
+</body>
+</html>
